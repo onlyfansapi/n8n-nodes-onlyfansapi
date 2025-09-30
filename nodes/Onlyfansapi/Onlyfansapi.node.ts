@@ -1,6 +1,5 @@
 import type { INodeType, INodeTypeDescription } from 'n8n-workflow';
-import { userDescription } from './resources/user';
-import { companyDescription } from './resources/company';
+import { accountDescription } from './resources/account';
 
 export class Onlyfansapi implements INodeType {
 	description: INodeTypeDescription = {
@@ -31,20 +30,15 @@ export class Onlyfansapi implements INodeType {
 				name: 'resource',
 				type: 'options',
 				noDataExpression: true,
-				options: [
-					{
-						name: 'User',
-						value: 'user',
-					},
-					{
-						name: 'Company',
-						value: 'company',
-					},
-				],
-				default: 'user',
+			options: [
+				{
+					name: 'Account',
+					value: 'account',
+				},
+			],
+			default: 'account',
 			},
-			...userDescription,
-			...companyDescription,
+			...accountDescription,
 		],
 	};
 }
