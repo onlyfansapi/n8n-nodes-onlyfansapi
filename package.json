@@ -5,7 +5,7 @@
   "license": "MIT",
   "homepage": "https://onlyfansapi.com",
   "keywords": ["n8n-community-node-package"],
-  "author": { "name": "", "email": "" },
+  "author": { "name": "OnlyFans API Team", "email": "hello@onlyfansapi.com" },
   "repository": { "type": "git", "url": "" },
   "scripts": {
     "build": "n8n-node build",

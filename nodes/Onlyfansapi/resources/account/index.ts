@@ -16,10 +16,10 @@ export const accountDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'List Accounts',
+				name: 'Get Many',
 				value: 'getAll',
 				action: 'List accounts',
-				description: 'List all connected OnlyFans accounts.',
+				description: 'List many connected OnlyFans accounts',
 				routing: {
 					request: {
 						method: 'GET',
