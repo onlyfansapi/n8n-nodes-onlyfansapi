@@ -1,13 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="darkblue"
-    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu">
-    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-    <rect x="9" y="9" width="6" height="6"></rect>
-    <line x1="9" y1="1" x2="9" y2="4"></line>
-    <line x1="15" y1="1" x2="15" y2="4"></line>
-    <line x1="9" y1="20" x2="9" y2="23"></line>
-    <line x1="15" y1="20" x2="15" y2="23"></line>
-    <line x1="20" y1="9" x2="23" y2="9"></line>
-    <line x1="20" y1="14" x2="23" y2="14"></line>
-    <line x1="1" y1="9" x2="4" y2="9"></line>
-    <line x1="1" y1="14" x2="4" y2="14"></line>
+<svg width="138" height="138" viewBox="0 0 138 138" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_4131_10)">
+        <g clip-path="url(#clip1_4131_10)">
+            <rect width="138" height="138" rx="30" fill="#B392F0"/>
+            <path d="M37 89L61 65L37 41" stroke="black" stroke-width="9" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+            <path d="M69 97H101" stroke="black" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+    </g>
+    <defs>
+        <clipPath id="clip0_4131_10">
+            <rect width="138" height="138" fill="white"/>
+        </clipPath>
+        <clipPath id="clip1_4131_10">
+            <rect width="138" height="138" fill="white"/>
+        </clipPath>
+    </defs>
 </svg>

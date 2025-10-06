@@ -1,5 +1,8 @@
 import type { INodeProperties } from 'n8n-workflow';
+import { accountDeleteDescription } from './delete';
 import { accountGetAllDescription } from './getAll';
+import { accountGetDescription } from './get';
+import { accountGetModelStartDateDescription } from './getModelStartDate';
 
 const showOnlyForAccounts = {
 	resource: ['account'],
@@ -15,6 +18,30 @@ export const accountDescription: INodeProperties[] = [
 			show: showOnlyForAccounts,
 		},
 		options: [
+			{
+				name: 'Disconnect Account',
+				value: 'delete',
+				action: 'Disconnect account',
+				description: 'Disconnect an OnlyFans account',
+				routing: {
+					request: {
+						method: 'DELETE',
+						url: '=/accounts/{{$parameter.accountId}}',
+					},
+				},
+			},
+			{
+				name: 'Get Account',
+				value: 'get',
+				action: 'Get account',
+				description: 'Get OnlyFans Profile details for an Account',
+				routing: {
+					request: {
+						method: 'GET',
+						url: '={{$parameter.accountId}}/me',
+					},
+				},
+			},
 			{
 				name: 'Get Many',
 				value: 'getAll',
@@ -32,8 +59,23 @@ export const accountDescription: INodeProperties[] = [
 					},
 				},
 			},
+			{
+				name: 'Get Model Start Date',
+				value: 'getModelStartDate',
+				action: 'Get model start date',
+				description: 'Get the start date of the model (the date+time monetization was enabled)',
+				routing: {
+					request: {
+						method: 'GET',
+						url: '={{$parameter.accountId}}/me/model-start-date',
+					},
+				},
+			},
 		],
 		default: 'getAll',
 	},
+	...accountDeleteDescription,
+	...accountGetDescription,
 	...accountGetAllDescription,
+	...accountGetModelStartDateDescription,
 ];

@@ -1,11 +1,12 @@
 import type { INodeType, INodeTypeDescription } from 'n8n-workflow';
 import { accountDescription } from './resources/account';
+import { apiKeysDescription } from './resources/apiKeys';
 
 export class Onlyfansapi implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'OnlyFans API',
 		name: 'onlyfansapi',
-		icon: { light: 'file:onlyfansapi.svg', dark: 'file:onlyfansapi.dark.svg' },
+		icon: 'file:onlyfansapi.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
@@ -35,10 +36,15 @@ export class Onlyfansapi implements INodeType {
 					name: 'Account',
 					value: 'account',
 				},
+				{
+					name: 'API Key',
+					value: 'apiKeys',
+				},
 			],
 			default: 'account',
-			},
-			...accountDescription,
-		],
+		},
+		...accountDescription,
+		...apiKeysDescription,
+	],
 	};
 }
