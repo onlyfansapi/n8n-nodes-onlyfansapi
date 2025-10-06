@@ -2,6 +2,7 @@ import type { INodeType, INodeTypeDescription } from 'n8n-workflow';
 import { accountDescription } from './resources/account';
 import { apiKeysDescription } from './resources/apiKeys';
 import { bankingDescription } from './resources/banking';
+import { chargebacksDescription } from './resources/chargebacks';
 
 export class Onlyfansapi implements INodeType {
 	description: INodeTypeDescription = {
@@ -45,12 +46,17 @@ export class Onlyfansapi implements INodeType {
 					name: 'Banking',
 					value: 'banking',
 				},
+				{
+					name: 'Chargeback',
+					value: 'chargebacks',
+				},
 			],
 			default: 'account',
 		},
 		...accountDescription,
 		...apiKeysDescription,
 		...bankingDescription,
+		...chargebacksDescription,
 	],
 	};
 }
