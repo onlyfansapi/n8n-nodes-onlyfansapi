@@ -6,6 +6,7 @@ import { chargebacksDescription } from './resources/chargebacks';
 import { chatMessagesDescription } from './resources/chatMessages';
 import { chatsDescription } from './resources/chats';
 import { clientSessionsDescription } from './resources/clientSessions';
+import { userListsDescription } from './resources/userLists';
 
 export class Onlyfansapi implements INodeType {
 	description: INodeTypeDescription = {
@@ -65,6 +66,10 @@ export class Onlyfansapi implements INodeType {
 					name: 'Client Session',
 					value: 'clientSessions',
 				},
+				{
+					name: 'User List',
+					value: 'userLists',
+				},
 			],
 			default: 'account',
 		},
@@ -75,6 +80,7 @@ export class Onlyfansapi implements INodeType {
 		...chatsDescription,
 		...chatMessagesDescription,
 		...clientSessionsDescription,
+		...userListsDescription,
 	],
 	};
 }
