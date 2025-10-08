@@ -4,6 +4,7 @@ import { apiKeysDescription } from './resources/apiKeys';
 import { bankingDescription } from './resources/banking';
 import { chargebacksDescription } from './resources/chargebacks';
 import { chatMessagesDescription } from './resources/chatMessages';
+import { chatsDescription } from './resources/chats';
 
 export class Onlyfansapi implements INodeType {
 	description: INodeTypeDescription = {
@@ -52,6 +53,10 @@ export class Onlyfansapi implements INodeType {
 					value: 'chargebacks',
 				},
 				{
+					name: 'Chat',
+					value: 'chats',
+				},
+				{
 					name: 'Chat Message',
 					value: 'chatMessages',
 				},
@@ -62,6 +67,7 @@ export class Onlyfansapi implements INodeType {
 		...apiKeysDescription,
 		...bankingDescription,
 		...chargebacksDescription,
+		...chatsDescription,
 		...chatMessagesDescription,
 	],
 	};
