@@ -1,17 +1,14 @@
 import type { INodeProperties } from 'n8n-workflow';
+import { accountIdParameter } from '../sharedParameters';
 
 export const accountDeleteDescription: INodeProperties[] = [
 	{
-		displayName: 'Account ID',
-		name: 'accountId',
-		type: 'string',
-		required: true,
+		...accountIdParameter,
 		displayOptions: {
 			show: {
 				resource: ['account'],
 				operation: ['delete'],
 			},
 		},
-		default: '',
 	},
 ];
