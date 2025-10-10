@@ -7,6 +7,7 @@ import { chatMessagesDescription } from './resources/chatMessages';
 import { chatsDescription } from './resources/chats';
 import { clientSessionsDescription } from './resources/clientSessions';
 import { connectOnlyfansAccountDescription } from './resources/connectOnlyfansAccount';
+import { fansDescription } from './resources/fans';
 import { userListsDescription } from './resources/userLists';
 
 export class Onlyfansapi implements INodeType {
@@ -73,6 +74,10 @@ export class Onlyfansapi implements INodeType {
 					value: 'connectOnlyfansAccount',
 				},
 				{
+					name: 'Fan',
+					value: 'fans',
+				},
+				{
 					name: 'User List',
 					value: 'userLists',
 				},
@@ -87,6 +92,7 @@ export class Onlyfansapi implements INodeType {
 		...chatMessagesDescription,
 		...clientSessionsDescription,
 		...connectOnlyfansAccountDescription,
+		...fansDescription,
 		...userListsDescription,
 	],
 	};
