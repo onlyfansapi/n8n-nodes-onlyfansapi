@@ -13,6 +13,7 @@ import { freeTrialLinksDescription } from './resources/freeTrialLinks';
 import { massMessagingDescription } from './resources/massMessaging';
 import { mediaDescription } from './resources/media';
 import { mediaVaultDescription } from './resources/mediaVault';
+import { mediaVaultListsDescription } from './resources/mediaVaultLists';
 import { userListsDescription } from './resources/userLists';
 
 export class Onlyfansapi implements INodeType {
@@ -103,6 +104,10 @@ export class Onlyfansapi implements INodeType {
 					value: 'mediaVault',
 				},
 				{
+					name: 'Media Vault List',
+					value: 'mediaVaultLists',
+				},
+				{
 					name: 'User List',
 					value: 'userLists',
 				},
@@ -123,6 +128,7 @@ export class Onlyfansapi implements INodeType {
 		...massMessagingDescription,
 		...mediaDescription,
 		...mediaVaultDescription,
+		...mediaVaultListsDescription,
 		...userListsDescription,
 	],
 	};
