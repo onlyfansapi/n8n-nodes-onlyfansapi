@@ -6,6 +6,7 @@ import { chargebacksDescription } from './resources/chargebacks';
 import { chatMessagesDescription } from './resources/chatMessages';
 import { chatsDescription } from './resources/chats';
 import { clientSessionsDescription } from './resources/clientSessions';
+import { connectOnlyfansAccountDescription } from './resources/connectOnlyfansAccount';
 import { userListsDescription } from './resources/userLists';
 
 export class Onlyfansapi implements INodeType {
@@ -29,6 +30,7 @@ export class Onlyfansapi implements INodeType {
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
+				'User-Agent': 'n8n-onlyfans-api/0.1.0',
 			},
 		},
 		properties: [
@@ -67,6 +69,10 @@ export class Onlyfansapi implements INodeType {
 					value: 'clientSessions',
 				},
 				{
+					name: 'Connect OnlyFans Account',
+					value: 'connectOnlyfansAccount',
+				},
+				{
 					name: 'User List',
 					value: 'userLists',
 				},
@@ -80,6 +86,7 @@ export class Onlyfansapi implements INodeType {
 		...chatsDescription,
 		...chatMessagesDescription,
 		...clientSessionsDescription,
+		...connectOnlyfansAccountDescription,
 		...userListsDescription,
 	],
 	};
