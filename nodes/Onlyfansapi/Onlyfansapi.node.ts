@@ -11,6 +11,8 @@ import { fansDescription } from './resources/fans';
 import { followingDescription } from './resources/following';
 import { freeTrialLinksDescription } from './resources/freeTrialLinks';
 import { massMessagingDescription } from './resources/massMessaging';
+import { mediaDescription } from './resources/media';
+import { mediaVaultDescription } from './resources/mediaVault';
 import { userListsDescription } from './resources/userLists';
 
 export class Onlyfansapi implements INodeType {
@@ -93,6 +95,14 @@ export class Onlyfansapi implements INodeType {
 					value: 'massMessaging',
 				},
 				{
+					name: 'Media',
+					value: 'media',
+				},
+				{
+					name: 'Media Vault',
+					value: 'mediaVault',
+				},
+				{
 					name: 'User List',
 					value: 'userLists',
 				},
@@ -111,6 +121,8 @@ export class Onlyfansapi implements INodeType {
 		...followingDescription,
 		...freeTrialLinksDescription,
 		...massMessagingDescription,
+		...mediaDescription,
+		...mediaVaultDescription,
 		...userListsDescription,
 	],
 	};
