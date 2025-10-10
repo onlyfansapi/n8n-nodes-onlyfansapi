@@ -8,6 +8,8 @@ import { chatsDescription } from './resources/chats';
 import { clientSessionsDescription } from './resources/clientSessions';
 import { connectOnlyfansAccountDescription } from './resources/connectOnlyfansAccount';
 import { fansDescription } from './resources/fans';
+import { followingDescription } from './resources/following';
+import { freeTrialLinksDescription } from './resources/freeTrialLinks';
 import { userListsDescription } from './resources/userLists';
 
 export class Onlyfansapi implements INodeType {
@@ -78,6 +80,14 @@ export class Onlyfansapi implements INodeType {
 					value: 'fans',
 				},
 				{
+					name: 'Following',
+					value: 'following',
+				},
+				{
+					name: 'Free Trial Link',
+					value: 'freeTrialLinks',
+				},
+				{
 					name: 'User List',
 					value: 'userLists',
 				},
@@ -93,6 +103,8 @@ export class Onlyfansapi implements INodeType {
 		...clientSessionsDescription,
 		...connectOnlyfansAccountDescription,
 		...fansDescription,
+		...followingDescription,
+		...freeTrialLinksDescription,
 		...userListsDescription,
 	],
 	};
