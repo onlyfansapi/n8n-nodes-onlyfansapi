@@ -14,6 +14,7 @@ import { massMessagingDescription } from './resources/massMessaging';
 import { mediaDescription } from './resources/media';
 import { mediaVaultDescription } from './resources/mediaVault';
 import { mediaVaultListsDescription } from './resources/mediaVaultLists';
+import { notificationsDescription } from './resources/notifications';
 import { userListsDescription } from './resources/userLists';
 
 export class Onlyfansapi implements INodeType {
@@ -108,6 +109,10 @@ export class Onlyfansapi implements INodeType {
 					value: 'mediaVaultLists',
 				},
 				{
+					name: 'Notification',
+					value: 'notifications',
+				},
+				{
 					name: 'User List',
 					value: 'userLists',
 				},
@@ -129,6 +134,7 @@ export class Onlyfansapi implements INodeType {
 		...mediaDescription,
 		...mediaVaultDescription,
 		...mediaVaultListsDescription,
+		...notificationsDescription,
 		...userListsDescription,
 	],
 	};
