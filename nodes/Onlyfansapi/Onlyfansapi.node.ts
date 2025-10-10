@@ -18,6 +18,7 @@ import { notificationsDescription } from './resources/notifications';
 import { payoutsDescription } from './resources/payouts';
 import { postCommentsDescription } from './resources/postComments';
 import { postLabelsDescription } from './resources/postLabels';
+import { postsDescription } from './resources/posts';
 import { userListsDescription } from './resources/userLists';
 
 export class Onlyfansapi implements INodeType {
@@ -120,6 +121,10 @@ export class Onlyfansapi implements INodeType {
 					value: 'payouts',
 				},
 				{
+					name: 'Post',
+					value: 'posts',
+				},
+				{
 					name: 'Post Comment',
 					value: 'postComments',
 				},
@@ -151,6 +156,7 @@ export class Onlyfansapi implements INodeType {
 		...mediaVaultListsDescription,
 		...notificationsDescription,
 		...payoutsDescription,
+		...postsDescription,
 		...postCommentsDescription,
 		...postLabelsDescription,
 		...userListsDescription,
