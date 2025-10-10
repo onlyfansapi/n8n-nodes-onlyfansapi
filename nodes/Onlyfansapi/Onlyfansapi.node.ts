@@ -10,6 +10,7 @@ import { connectOnlyfansAccountDescription } from './resources/connectOnlyfansAc
 import { fansDescription } from './resources/fans';
 import { followingDescription } from './resources/following';
 import { freeTrialLinksDescription } from './resources/freeTrialLinks';
+import { massMessagingDescription } from './resources/massMessaging';
 import { userListsDescription } from './resources/userLists';
 
 export class Onlyfansapi implements INodeType {
@@ -88,6 +89,10 @@ export class Onlyfansapi implements INodeType {
 					value: 'freeTrialLinks',
 				},
 				{
+					name: 'Mass Messaging',
+					value: 'massMessaging',
+				},
+				{
 					name: 'User List',
 					value: 'userLists',
 				},
@@ -105,6 +110,7 @@ export class Onlyfansapi implements INodeType {
 		...fansDescription,
 		...followingDescription,
 		...freeTrialLinksDescription,
+		...massMessagingDescription,
 		...userListsDescription,
 	],
 	};
