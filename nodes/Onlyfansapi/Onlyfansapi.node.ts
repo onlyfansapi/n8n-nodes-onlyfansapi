@@ -19,9 +19,11 @@ import { payoutsDescription } from './resources/payouts';
 import { postCommentsDescription } from './resources/postComments';
 import { postLabelsDescription } from './resources/postLabels';
 import { postsDescription } from './resources/posts';
+import { publicProfilesDescription } from './resources/publicProfiles';
 import { queueDescription } from './resources/queue';
 import { savedForLaterMessagesDescription } from './resources/savedForLaterMessages';
 import { savedForLaterPostsDescription } from './resources/savedForLaterPosts';
+import { settingsDescription } from './resources/settings';
 import { statisticsDescription } from './resources/statistics';
 import { trackingLinksDescription } from './resources/trackingLinks';
 import { transactionsDescription } from './resources/transactions';
@@ -140,6 +142,10 @@ export class Onlyfansapi implements INodeType {
 					value: 'postLabels',
 				},
 				{
+					name: 'Public Profile',
+					value: 'publicProfiles',
+				},
+				{
 					name: 'Queue',
 					value: 'queue',
 				},
@@ -150,6 +156,10 @@ export class Onlyfansapi implements INodeType {
 				{
 					name: 'Saved For Later Post',
 					value: 'savedForLaterPosts',
+				},
+				{
+					name: 'Setting',
+					value: 'settings',
 				},
 				{
 					name: 'Statistic',
@@ -194,9 +204,11 @@ export class Onlyfansapi implements INodeType {
 		...postsDescription,
 		...postCommentsDescription,
 		...postLabelsDescription,
+		...publicProfilesDescription,
 		...queueDescription,
 		...savedForLaterMessagesDescription,
 		...savedForLaterPostsDescription,
+		...settingsDescription,
 		...statisticsDescription,
 		...trackingLinksDescription,
 		...transactionsDescription,
