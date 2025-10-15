@@ -26,6 +26,7 @@ import { statisticsDescription } from './resources/statistics';
 import { trackingLinksDescription } from './resources/trackingLinks';
 import { transactionsDescription } from './resources/transactions';
 import { userListsDescription } from './resources/userLists';
+import { usersDescription } from './resources/users';
 
 export class Onlyfansapi implements INodeType {
 	description: INodeTypeDescription = {
@@ -163,6 +164,10 @@ export class Onlyfansapi implements INodeType {
 					value: 'transactions',
 				},
 				{
+					name: 'User',
+					value: 'users',
+				},
+				{
 					name: 'User List',
 					value: 'userLists',
 				},
@@ -196,6 +201,7 @@ export class Onlyfansapi implements INodeType {
 		...trackingLinksDescription,
 		...transactionsDescription,
 		...userListsDescription,
+		...usersDescription,
 	],
 	};
 }
