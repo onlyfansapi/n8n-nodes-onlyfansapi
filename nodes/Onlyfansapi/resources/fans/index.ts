@@ -3,6 +3,7 @@ import { fansListActiveFansDescription } from './listActiveFans';
 import { fansListAllFansDescription } from './listAllFans';
 import { fansListExpiredFansDescription } from './listExpiredFans';
 import { fansListLatestFansDescription } from './listLatestFans';
+import { fansSetCustomNameDescription } from './setCustomName';
 
 const showOnlyForFans = {
 	resource: ['fans'],
@@ -102,6 +103,21 @@ export const fansDescription: INodeProperties[] = [
 					},
 				},
 			},
+			{
+				name: 'Set Custom Name',
+				value: 'setCustomName',
+				action: 'Set fan custom name',
+				description: "Change the fan's custom name shown in OnlyFans",
+				routing: {
+					request: {
+						method: 'PUT',
+						url: '={{$parameter.accountId}}/fans/{{$parameter.fanId}}/custom-name',
+						body: {
+							custom_name: '={{$parameter.custom_name}}',
+						},
+					},
+				},
+			},
 		],
 		default: 'listAllFans',
 	},
@@ -109,4 +125,5 @@ export const fansDescription: INodeProperties[] = [
 	...fansListAllFansDescription,
 	...fansListExpiredFansDescription,
 	...fansListLatestFansDescription,
+	...fansSetCustomNameDescription,
 ];

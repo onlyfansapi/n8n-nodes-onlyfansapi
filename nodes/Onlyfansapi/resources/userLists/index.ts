@@ -2,7 +2,9 @@ import type { INodeProperties } from 'n8n-workflow';
 import { userListsAddUsersToUserListDescription } from './addUsersToUserList';
 import { userListsCreateDescription } from './create';
 import { userListsDeleteDescription } from './delete';
+import { userListsGetDescription } from './get';
 import { userListsGetAllDescription } from './getAll';
+import { userListsGetUsersInListDescription } from './getUsersInList';
 import { userListsRemoveUserFromUserListDescription } from './removeUserFromUserList';
 import { userListsUpdateDescription } from './update';
 
@@ -63,6 +65,18 @@ export const userListsDescription: INodeProperties[] = [
 				},
 			},
 			{
+				name: 'Get',
+				value: 'get',
+				action: 'Get user list',
+				description: 'Get a single user list',
+				routing: {
+					request: {
+						method: 'GET',
+						url: '={{$parameter.accountId}}/user-lists/{{$parameter.userListId}}',
+					},
+				},
+			},
+			{
 				name: 'Get Many',
 				value: 'getAll',
 				action: 'Get user lists',
@@ -75,6 +89,18 @@ export const userListsDescription: INodeProperties[] = [
 							limit: '={{$parameter.options.limit}}',
 							offset: '={{$parameter.options.offset}}',
 						},
+					},
+				},
+			},
+			{
+				name: 'Get Users in List',
+				value: 'getUsersInList',
+				action: 'Get users in list',
+				description: 'Get all users in a OnlyFans user list',
+				routing: {
+					request: {
+						method: 'GET',
+						url: '={{$parameter.accountId}}/user-lists/{{$parameter.userListId}}/users',
 					},
 				},
 			},
@@ -111,7 +137,9 @@ export const userListsDescription: INodeProperties[] = [
 	...userListsAddUsersToUserListDescription,
 	...userListsCreateDescription,
 	...userListsDeleteDescription,
+	...userListsGetDescription,
 	...userListsGetAllDescription,
+	...userListsGetUsersInListDescription,
 	...userListsRemoveUserFromUserListDescription,
 	...userListsUpdateDescription,
 ];

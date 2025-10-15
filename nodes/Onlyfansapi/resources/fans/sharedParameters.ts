@@ -2,6 +2,15 @@ import type { INodeProperties } from 'n8n-workflow';
 
 export { accountIdParameter } from '../sharedParameters';
 
+export const fanIdParameter: INodeProperties = {
+	displayName: 'Fan ID',
+	name: 'fanId',
+	type: 'string',
+	required: true,
+	default: '',
+	description: "Fan's OnlyFans User ID",
+};
+
 export const fansOptionsParameter: INodeProperties = {
 	displayName: 'Options',
 	name: 'options',
