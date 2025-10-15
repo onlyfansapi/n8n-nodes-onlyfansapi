@@ -22,7 +22,9 @@ import { postsDescription } from './resources/posts';
 import { queueDescription } from './resources/queue';
 import { savedForLaterMessagesDescription } from './resources/savedForLaterMessages';
 import { savedForLaterPostsDescription } from './resources/savedForLaterPosts';
+import { statisticsDescription } from './resources/statistics';
 import { trackingLinksDescription } from './resources/trackingLinks';
+import { transactionsDescription } from './resources/transactions';
 import { userListsDescription } from './resources/userLists';
 
 export class Onlyfansapi implements INodeType {
@@ -149,8 +151,16 @@ export class Onlyfansapi implements INodeType {
 					value: 'savedForLaterPosts',
 				},
 				{
+					name: 'Statistic',
+					value: 'statistics',
+				},
+				{
 					name: 'Tracking Link',
 					value: 'trackingLinks',
+				},
+				{
+					name: 'Transaction',
+					value: 'transactions',
 				},
 				{
 					name: 'User List',
@@ -182,7 +192,9 @@ export class Onlyfansapi implements INodeType {
 		...queueDescription,
 		...savedForLaterMessagesDescription,
 		...savedForLaterPostsDescription,
+		...statisticsDescription,
 		...trackingLinksDescription,
+		...transactionsDescription,
 		...userListsDescription,
 	],
 	};
