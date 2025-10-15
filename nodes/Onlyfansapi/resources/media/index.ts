@@ -1,6 +1,5 @@
 import type { INodeProperties } from 'n8n-workflow';
 import { mediaScrapeMediaFromTheOnlyFansCDNDescription } from './scrapeMediaFromTheOnlyFansCDN';
-import { mediaUploadMediaToTheOnlyFansCDNDescription } from './uploadMediaToTheOnlyFansCDN';
 
 const showOnlyForMedia = {
 	resource: ['media'],
@@ -33,29 +32,8 @@ export const mediaDescription: INodeProperties[] = [
 					},
 				},
 			},
-			{
-				name: 'Upload Media To The OnlyFans CDN',
-				value: 'uploadMediaToTheOnlyFansCDN',
-				action: 'Upload media to the only fans cdn',
-				description: 'The response can be used only once to manually include media in a post or message. This endpoint does not upload media to the Vault.',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '={{$parameter.accountId}}/media/upload',
-					},
-					send: {
-						type: 'body',
-						contentType: 'multipart-form-data',
-						property: {
-							file: '={{$parameter.file}}',
-							type: '={{$parameter.additionalFields.type}}',
-						},
-					},
-				},
-			},
 		],
 		default: 'scrapeMediaFromTheOnlyFansCDN',
 	},
 	...mediaScrapeMediaFromTheOnlyFansCDNDescription,
-	...mediaUploadMediaToTheOnlyFansCDNDescription,
 ];
