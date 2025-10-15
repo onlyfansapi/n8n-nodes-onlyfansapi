@@ -29,6 +29,7 @@ import { trackingLinksDescription } from './resources/trackingLinks';
 import { transactionsDescription } from './resources/transactions';
 import { userListsDescription } from './resources/userLists';
 import { usersDescription } from './resources/users';
+import { webhooksDescription } from './resources/webhooks';
 
 export class Onlyfansapi implements INodeType {
 	description: INodeTypeDescription = {
@@ -181,6 +182,10 @@ export class Onlyfansapi implements INodeType {
 					name: 'User List',
 					value: 'userLists',
 				},
+				{
+					name: 'Webhook',
+					value: 'webhooks',
+				},
 			],
 			default: 'account',
 		},
@@ -214,6 +219,7 @@ export class Onlyfansapi implements INodeType {
 		...transactionsDescription,
 		...userListsDescription,
 		...usersDescription,
+		...webhooksDescription,
 	],
 	};
 }
