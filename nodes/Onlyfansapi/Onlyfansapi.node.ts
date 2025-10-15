@@ -19,6 +19,7 @@ import { payoutsDescription } from './resources/payouts';
 import { postCommentsDescription } from './resources/postComments';
 import { postLabelsDescription } from './resources/postLabels';
 import { postsDescription } from './resources/posts';
+import { savedForLaterMessagesDescription } from './resources/savedForLaterMessages';
 import { userListsDescription } from './resources/userLists';
 
 export class Onlyfansapi implements INodeType {
@@ -133,6 +134,10 @@ export class Onlyfansapi implements INodeType {
 					value: 'postLabels',
 				},
 				{
+					name: 'Saved For Later Message',
+					value: 'savedForLaterMessages',
+				},
+				{
 					name: 'User List',
 					value: 'userLists',
 				},
@@ -159,6 +164,7 @@ export class Onlyfansapi implements INodeType {
 		...postsDescription,
 		...postCommentsDescription,
 		...postLabelsDescription,
+		...savedForLaterMessagesDescription,
 		...userListsDescription,
 	],
 	};
