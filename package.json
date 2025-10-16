@@ -1,12 +1,20 @@
 {
   "name": "n8n-nodes-onlyfansapi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "n8n community node to work with OnlyFans API",
   "license": "MIT",
   "homepage": "https://onlyfansapi.com",
-  "keywords": ["n8n-community-node-package"],
-  "author": { "name": "OnlyFans API Team", "email": "hello@onlyfansapi.com" },
-  "repository": { "type": "git", "url": "https://github.com/onlyfansapi/n8n-nodes-onlyfansapi" },
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "author": {
+    "name": "OnlyFans API Team",
+    "email": "hello@onlyfansapi.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onlyfansapi/n8n-nodes-onlyfansapi"
+  },
   "scripts": {
     "build": "n8n-node build",
     "build:watch": "tsc --watch",
@@ -16,11 +24,17 @@
     "release": "n8n-node release",
     "prepublishOnly": "n8n-node prerelease"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "n8n": {
     "n8nNodesApiVersion": 1,
-    "credentials": ["dist/credentials/OnlyfansapiApi.credentials.js"],
-    "nodes": ["dist/nodes/Onlyfansapi/Onlyfansapi.node.js"]
+    "credentials": [
+      "dist/credentials/OnlyfansapiApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Onlyfansapi/Onlyfansapi.node.js"
+    ]
   },
   "devDependencies": {
     "@n8n/node-cli": "0.11.0",
@@ -29,5 +43,7 @@
     "release-it": "^19.0.4",
     "typescript": "5.9.2"
   },
-  "peerDependencies": { "n8n-workflow": "*" }
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
 }
