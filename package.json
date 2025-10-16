@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-onlyfansapi",
+  "name": "@onlyfansapi/n8n-nodes-onlyfansapi",
   "version": "0.1.1",
   "description": "n8n community node to work with OnlyFans API",
   "license": "MIT",
