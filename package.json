@@ -6,7 +6,7 @@
   "homepage": "https://onlyfansapi.com",
   "keywords": ["n8n-community-node-package"],
   "author": { "name": "OnlyFans API Team", "email": "hello@onlyfansapi.com" },
-  "repository": { "type": "git", "url": "" },
+  "repository": { "type": "git", "url": "https://github.com/onlyfansapi/n8n-nodes-onlyfansapi" },
   "scripts": {
     "build": "n8n-node build",
     "build:watch": "tsc --watch",

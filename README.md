@@ -1,8 +1,8 @@
 # n8n-nodes-onlyfansapi
 
-This is an n8n community node. It lets you use _app/service name_ in your n8n workflows.
+This is an n8n community node. It lets you use OnlyFans API in your n8n workflows.
 
-_App/service name_ is _one or two sentences describing the service this node integrates with_.
+OnlyFans API is an unofficial API for OnlyFans, a popular content subscription service, to automate your workflows with ease.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
