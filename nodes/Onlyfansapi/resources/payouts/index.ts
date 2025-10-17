@@ -113,9 +113,9 @@ export const payoutsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PATCH',
-						url: '={{$parameter.accountId}}/payouts/update-payout-frequency',
+						url: '={{$parameter.accountId}}/payouts/payout-frequency',
 						body: {
-							withdrawalPeriod: '={{$parameter.withdrawalPeriod}}',
+							frequency: '={{$parameter.withdrawalPeriod}}',
 						},
 					},
 				},
