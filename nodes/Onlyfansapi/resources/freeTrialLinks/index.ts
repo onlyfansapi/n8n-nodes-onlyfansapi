@@ -27,12 +27,12 @@ export const freeTrialLinksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/trial-links',
+						url: '={{$parameter.accountId}}/trial-links',
 						body: {
-							subscribeDays: '{{.subscribeDays}}',
-							trialLinkName: '{{.additionalFields.trialLinkName}}',
-							subscribeCounts: '{{.additionalFields.subscribeCounts}}',
-							expiredAt: '{{.additionalFields.expiredAt}}',
+							subscribeDays: '={{$parameter.subscribeDays}}',
+							trialLinkName: '={{$parameter.additionalFields.trialLinkName}}',
+							subscribeCounts: '={{$parameter.additionalFields.subscribeCounts}}',
+							expiredAt: '={{$parameter.additionalFields.expiredAt}}',
 						},
 					},
 				},
@@ -45,7 +45,7 @@ export const freeTrialLinksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '{{.accountId}}/trial-links/{{$parameter.trialLinkId}}',
+						url: '={{$parameter.accountId}}/trial-links/{{$parameter.trialLinkId}}',
 					},
 				},
 			},
@@ -57,13 +57,13 @@ export const freeTrialLinksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/trial-links',
+						url: '={{$parameter.accountId}}/trial-links',
 						qs: {
-							limit: '{{.options.limit}}',
-							offset: '{{.options.offset}}',
-							sort: '{{.options.sort}}',
-							field: '{{.options.field}}',
-							synchronous: '{{.options.synchronous}}',
+							limit: '={{$parameter.options.limit}}',
+							offset: '={{$parameter.options.offset}}',
+							sort: '={{$parameter.options.sort}}',
+							field: '={{$parameter.options.field}}',
+							synchronous: '={{$parameter.options.synchronous}}',
 						},
 					},
 				},
@@ -76,11 +76,11 @@ export const freeTrialLinksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/trial-links/{{$parameter.trialLinkId}}/spenders',
+						url: '={{$parameter.accountId}}/trial-links/{{$parameter.trialLinkId}}/spenders',
 						qs: {
-							limit: '{{.options.limit}}',
-							offset: '{{.options.offset}}',
-							minSpend: '{{.options.minSpend}}',
+							limit: '={{$parameter.options.limit}}',
+							offset: '={{$parameter.options.offset}}',
+							minSpend: '={{$parameter.options.minSpend}}',
 						},
 					},
 				},
@@ -93,10 +93,10 @@ export const freeTrialLinksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/trial-links/{{$parameter.trialLinkId}}/subscribers',
+						url: '={{$parameter.accountId}}/trial-links/{{$parameter.trialLinkId}}/subscribers',
 						qs: {
-							limit: '{{.options.limit}}',
-							offset: '{{.options.offset}}',
+							limit: '={{$parameter.options.limit}}',
+							offset: '={{$parameter.options.offset}}',
 						},
 					},
 				},

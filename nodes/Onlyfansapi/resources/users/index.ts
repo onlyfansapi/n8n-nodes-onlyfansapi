@@ -23,7 +23,7 @@ export const usersDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/users/{{$parameter.username}}',
+						url: '={{$parameter.accountId}}/users/{{$parameter.username}}',
 					},
 				},
 			},

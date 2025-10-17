@@ -26,9 +26,9 @@ export const webhooksDescription: INodeProperties[] = [
 						method: 'POST',
 						url: '=/webhooks',
 						body: {
-							endpoint_url: '{{.endpoint_url}}',
-							events: '{{.events}}',
-							signing_secret: '{{.additionalFields.signing_secret}}',
+							endpoint_url: '={{$parameter.endpoint_url}}',
+							events: '={{$parameter.events}}',
+							signing_secret: '={{$parameter.additionalFields.signing_secret}}',
 						},
 					},
 				},

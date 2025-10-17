@@ -23,11 +23,12 @@ export const transactionsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/transactions',
-					},
-					send: {
-						type: 'query',
-						property: 'options',
+						url: '={{$parameter.accountId}}/transactions',
+						qs: {
+							limit: '={{$parameter.options.limit}}',
+							startDate: '={{$parameter.options.startDate}}',
+							marker: '={{$parameter.options.marker}}',
+						},
 					},
 				},
 			},

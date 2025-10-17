@@ -25,11 +25,11 @@ export const queueDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/queue/counts',
+						url: '={{$parameter.accountId}}/queue/counts',
 						qs: {
-							publishDateStart: '{{$parameter.publishDateStart}}',
-							publishDateEnd: '{{$parameter.publishDateEnd}}',
-							timezone: '{{$parameter.timezone}}',
+							publishDateStart: '={{$parameter.publishDateStart}}',
+							publishDateEnd: '={{$parameter.publishDateEnd}}',
+							timezone: '={{$parameter.timezone}}',
 						},
 					},
 				},
@@ -42,12 +42,12 @@ export const queueDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/queue',
+						url: '={{$parameter.accountId}}/queue',
 						qs: {
-							publishDateStart: '{{$parameter.publishDateStart}}',
-							publishDateEnd: '{{$parameter.publishDateEnd}}',
-							timezone: '{{$parameter.timezone}}',
-							limit: '{{$parameter.options.limit}}',
+							publishDateStart: '={{$parameter.publishDateStart}}',
+							publishDateEnd: '={{$parameter.publishDateEnd}}',
+							timezone: '={{$parameter.timezone}}',
+							limit: '={{$parameter.options.limit}}',
 						},
 					},
 				},
@@ -60,7 +60,7 @@ export const queueDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PUT',
-						url: '{{.accountId}}/queue/{{$parameter.queueId}}/publish',
+						url: '={{$parameter.accountId}}/queue/{{$parameter.queueId}}/publish',
 					},
 				},
 			},

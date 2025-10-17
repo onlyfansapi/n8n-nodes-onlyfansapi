@@ -29,9 +29,9 @@ export const mediaVaultListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/media/vault/lists/{{$parameter.listId}}/media',
+						url: '={{$parameter.accountId}}/media/vault/lists/{{$parameter.listId}}/media',
 						body: {
-							mediaIds: '{{.mediaIds}}',
+							mediaIds: '={{$parameter.mediaIds}}',
 						},
 					},
 				},
@@ -44,9 +44,9 @@ export const mediaVaultListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/media/vault/lists',
+						url: '={{$parameter.accountId}}/media/vault/lists',
 						body: {
-							name: '{{.name}}',
+							name: '={{$parameter.name}}',
 						},
 					},
 				},
@@ -59,7 +59,7 @@ export const mediaVaultListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '{{.accountId}}/media/vault/lists/{{$parameter.listId}}',
+						url: '={{$parameter.accountId}}/media/vault/lists/{{$parameter.listId}}',
 					},
 				},
 			},
@@ -71,11 +71,11 @@ export const mediaVaultListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/media/vault/lists',
+						url: '={{$parameter.accountId}}/media/vault/lists',
 						qs: {
-							query: '{{.options.query}}',
-							limit: '{{.options.limit}}',
-							offset: '{{.options.offset}}',
+							query: '={{$parameter.options.query}}',
+							limit: '={{$parameter.options.limit}}',
+							offset: '={{$parameter.options.offset}}',
 						},
 					},
 				},
@@ -88,9 +88,9 @@ export const mediaVaultListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '{{.accountId}}/media/vault/lists/{{$parameter.listId}}/media',
+						url: '={{$parameter.accountId}}/media/vault/lists/{{$parameter.listId}}/media',
 						body: {
-							mediaIds: '{{.mediaIds}}',
+							mediaIds: '={{$parameter.mediaIds}}',
 						},
 					},
 				},
@@ -103,9 +103,9 @@ export const mediaVaultListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PUT',
-						url: '{{.accountId}}/media/vault/lists/{{$parameter.listId}}',
+						url: '={{$parameter.accountId}}/media/vault/lists/{{$parameter.listId}}',
 						body: {
-							name: '{{.name}}',
+							name: '={{$parameter.name}}',
 						},
 					},
 				},
@@ -118,7 +118,7 @@ export const mediaVaultListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/media/vault/lists/{{$parameter.listId}}',
+						url: '={{$parameter.accountId}}/media/vault/lists/{{$parameter.listId}}',
 					},
 				},
 			},

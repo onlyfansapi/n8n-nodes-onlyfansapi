@@ -30,7 +30,7 @@ export const bankingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/banking/details/account-country',
+						url: '={{$parameter.accountId}}/banking/details/account-country',
 					},
 				},
 			},
@@ -43,7 +43,7 @@ export const bankingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/banking/details/bank',
+						url: '={{$parameter.accountId}}/banking/details/bank',
 					},
 				},
 			},
@@ -56,7 +56,7 @@ export const bankingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/banking/details/dac7-form',
+						url: '={{$parameter.accountId}}/banking/details/dac7-form',
 					},
 				},
 			},
@@ -69,7 +69,7 @@ export const bankingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/banking/details/legal-info',
+						url: '={{$parameter.accountId}}/banking/details/legal-info',
 					},
 				},
 			},
@@ -82,7 +82,7 @@ export const bankingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/banking/details/legal-form',
+						url: '={{$parameter.accountId}}/banking/details/legal-form',
 					},
 				},
 			},
@@ -95,7 +95,7 @@ export const bankingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/banking/available-payout-systems',
+						url: '={{$parameter.accountId}}/banking/available-payout-systems',
 					},
 				},
 			},
@@ -107,7 +107,7 @@ export const bankingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/banking/countries',
+						url: '={{$parameter.accountId}}/banking/countries',
 					},
 				},
 			},

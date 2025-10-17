@@ -31,9 +31,9 @@ export const postsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/posts/{{$parameter.postId}}/archive',
+						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}/archive',
 						qs: {
-							private_archive: '{{.options.private_archive}}',
+							private_archive: '={{$parameter.options.private_archive}}',
 						},
 					},
 				},
@@ -46,7 +46,7 @@ export const postsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '{{.accountId}}/posts/{{$parameter.postId}}',
+						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}',
 					},
 				},
 			},
@@ -58,7 +58,7 @@ export const postsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/posts/{{$parameter.postId}}',
+						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}',
 					},
 				},
 			},
@@ -70,16 +70,16 @@ export const postsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/posts',
+						url: '={{$parameter.accountId}}/posts',
 						qs: {
-							query: '{{.options.query}}',
-							limit: '{{.options.limit}}',
-							offset: '{{.options.offset}}',
-							order: '{{.options.order}}',
-							sort: '{{.options.sort}}',
-							pinned: '{{.options.pinned}}',
-							counters: '{{.options.counters}}',
-							minimumPublishDate: '{{.options.minimumPublishDate}}',
+							query: '={{$parameter.options.query}}',
+							limit: '={{$parameter.options.limit}}',
+							offset: '={{$parameter.options.offset}}',
+							order: '={{$parameter.options.order}}',
+							sort: '={{$parameter.options.sort}}',
+							pinned: '={{$parameter.options.pinned}}',
+							counters: '={{$parameter.options.counters}}',
+							minimumPublishDate: '={{$parameter.options.minimumPublishDate}}',
 						},
 					},
 				},
@@ -92,7 +92,7 @@ export const postsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/posts/{{$parameter.postId}}/pin',
+						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}/pin',
 					},
 				},
 			},
@@ -104,14 +104,14 @@ export const postsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/posts',
+						url: '={{$parameter.accountId}}/posts',
 						body: {
-							text: '{{.text}}',
-							labelIds: '{{.additionalFields.labelIds ? $parameter.additionalFields.labelIds.split(",") : undefined}}',
-							price: '{{.additionalFields.price}}',
-							mediaFiles: '{{.additionalFields.mediaFiles ? $parameter.additionalFields.mediaFiles.split(",") : undefined}}',
-							scheduledDate: '{{.additionalFields.scheduledDate}}',
-							saveForLater: '{{.additionalFields.saveForLater}}',
+							text: '={{$parameter.text}}',
+							labelIds: '={{$parameter.additionalFields.labelIds ? $parameter.additionalFields.labelIds.split(",") : undefined}}',
+							price: '={{$parameter.additionalFields.price}}',
+							mediaFiles: '={{$parameter.additionalFields.mediaFiles ? $parameter.additionalFields.mediaFiles.split(",") : undefined}}',
+							scheduledDate: '={{$parameter.additionalFields.scheduledDate}}',
+							saveForLater: '={{$parameter.additionalFields.saveForLater}}',
 						},
 					},
 				},
@@ -124,7 +124,7 @@ export const postsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/posts/{{$parameter.postId}}/statistics',
+						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}/statistics',
 					},
 				},
 			},
@@ -136,7 +136,7 @@ export const postsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/posts/{{$parameter.postId}}/unarchive',
+						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}/unarchive',
 					},
 				},
 			},
@@ -148,14 +148,14 @@ export const postsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PUT',
-						url: '{{.accountId}}/posts/{{$parameter.postId}}',
+						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}',
 						body: {
-							text: '{{.updateFields.text}}',
-							labelIds: '{{.updateFields.labelIds ? $parameter.updateFields.labelIds.split(",") : undefined}}',
-							price: '{{.updateFields.price}}',
-							mediaFiles: '{{.updateFields.mediaFiles ? $parameter.updateFields.mediaFiles.split(",") : undefined}}',
-							scheduledDate: '{{.updateFields.scheduledDate}}',
-							saveForLater: '{{.updateFields.saveForLater}}',
+							text: '={{$parameter.updateFields.text}}',
+							labelIds: '={{$parameter.updateFields.labelIds ? $parameter.updateFields.labelIds.split(",") : undefined}}',
+							price: '={{$parameter.updateFields.price}}',
+							mediaFiles: '={{$parameter.updateFields.mediaFiles ? $parameter.updateFields.mediaFiles.split(",") : undefined}}',
+							scheduledDate: '={{$parameter.updateFields.scheduledDate}}',
+							saveForLater: '={{$parameter.updateFields.saveForLater}}',
 						},
 					},
 				},

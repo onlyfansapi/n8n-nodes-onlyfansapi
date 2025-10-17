@@ -29,7 +29,7 @@ export const chatMessagesDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '{{.accountId}}/chats/{{$parameter.chatId}}/messages/{{$parameter.messageId}}',
+						url: '={{$parameter.accountId}}/chats/{{$parameter.chatId}}/messages/{{$parameter.messageId}}',
 					},
 				},
 			},
@@ -41,11 +41,11 @@ export const chatMessagesDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/chats/{{$parameter.chatId}}/messages',
+						url: '={{$parameter.accountId}}/chats/{{$parameter.chatId}}/messages',
 						qs: {
-							id: '{{.options.id}}',
-							order: '{{.options.order}}',
-							skip_users: '{{.options.skip_users}}',
+							id: '={{$parameter.options.id}}',
+							order: '={{$parameter.options.order}}',
+							skip_users: '={{$parameter.options.skip_users}}',
 						},
 					},
 				},
@@ -58,7 +58,7 @@ export const chatMessagesDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/chats/{{$parameter.chatId}}/messages/{{$parameter.messageId}}/like',
+						url: '={{$parameter.accountId}}/chats/{{$parameter.chatId}}/messages/{{$parameter.messageId}}/like',
 					},
 				},
 			},
@@ -70,7 +70,7 @@ export const chatMessagesDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/chats/{{$parameter.chatId}}/messages/{{$parameter.messageId}}/pin',
+						url: '={{$parameter.accountId}}/chats/{{$parameter.chatId}}/messages/{{$parameter.messageId}}/pin',
 					},
 				},
 			},
@@ -82,9 +82,9 @@ export const chatMessagesDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/chats/{{$parameter.chatId}}/messages',
+						url: '={{$parameter.accountId}}/chats/{{$parameter.chatId}}/messages',
 						body: {
-							text: '{{.text}}',
+							text: '={{$parameter.text}}',
 						},
 					},
 				},
@@ -97,7 +97,7 @@ export const chatMessagesDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '{{.accountId}}/chats/{{$parameter.chatId}}/messages/{{$parameter.messageId}}/like',
+						url: '={{$parameter.accountId}}/chats/{{$parameter.chatId}}/messages/{{$parameter.messageId}}/like',
 					},
 				},
 			},
@@ -109,7 +109,7 @@ export const chatMessagesDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '{{.accountId}}/chats/{{$parameter.chatId}}/messages/{{$parameter.messageId}}/pin',
+						url: '={{$parameter.accountId}}/chats/{{$parameter.chatId}}/messages/{{$parameter.messageId}}/pin',
 					},
 				},
 			},

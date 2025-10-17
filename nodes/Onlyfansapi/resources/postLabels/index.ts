@@ -24,9 +24,9 @@ export const postLabelsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/posts/labels',
+						url: '={{$parameter.accountId}}/posts/labels',
 						body: {
-							name: '{{.name}}',
+							name: '={{$parameter.name}}',
 						},
 					},
 				},
@@ -39,10 +39,10 @@ export const postLabelsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/posts/labels',
+						url: '={{$parameter.accountId}}/posts/labels',
 						qs: {
-							limit: '{{.options.limit}}',
-							offset: '{{.options.offset}}',
+							limit: '={{$parameter.options.limit}}',
+							offset: '={{$parameter.options.offset}}',
 						},
 					},
 				},

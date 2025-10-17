@@ -23,11 +23,11 @@ export const mediaDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/media/scrape',
+						url: '={{$parameter.accountId}}/media/scrape',
 						body: {
-							url: '{{.url}}',
-							expiration_date: '{{.additionalFields.expiration_date}}',
-							public: '{{.additionalFields.public}}',
+							url: '={{$parameter.url}}',
+							expiration_date: '={{$parameter.additionalFields.expiration_date}}',
+							public: '={{$parameter.additionalFields.public}}',
 						},
 					},
 				},

@@ -25,12 +25,12 @@ export const followingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/following/active',
+						url: '={{$parameter.accountId}}/following/active',
 						qs: {
-							limit: '{{.options.limit}}',
-							offset: '{{.options.offset}}',
-							'filter.online': '{{.filters.online}}',
-							'filter.paid': '{{.filters.paid}}',
+							limit: '={{$parameter.options.limit}}',
+							offset: '={{$parameter.options.offset}}',
+							'filter.online': '={{$parameter.filters.online}}',
+							'filter.paid': '={{$parameter.filters.paid}}',
 						},
 					},
 				},
@@ -43,12 +43,12 @@ export const followingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/following/all',
+						url: '={{$parameter.accountId}}/following/all',
 						qs: {
-							limit: '{{.options.limit}}',
-							offset: '{{.options.offset}}',
-							'filter.online': '{{.filters.online}}',
-							'filter.paid': '{{.filters.paid}}',
+							limit: '={{$parameter.options.limit}}',
+							offset: '={{$parameter.options.offset}}',
+							'filter.online': '={{$parameter.filters.online}}',
+							'filter.paid': '={{$parameter.filters.paid}}',
 						},
 					},
 				},
@@ -61,12 +61,12 @@ export const followingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/following/expired',
+						url: '={{$parameter.accountId}}/following/expired',
 						qs: {
-							limit: '{{.options.limit}}',
-							offset: '{{.options.offset}}',
-							'filter.online': '{{.filters.online}}',
-							'filter.paid': '{{.filters.paid}}',
+							limit: '={{$parameter.options.limit}}',
+							offset: '={{$parameter.options.offset}}',
+							'filter.online': '={{$parameter.filters.online}}',
+							'filter.paid': '={{$parameter.filters.paid}}',
 						},
 					},
 				},

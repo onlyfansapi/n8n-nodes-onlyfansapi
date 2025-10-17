@@ -27,14 +27,14 @@ export const chatsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/chats',
+						url: '={{$parameter.accountId}}/chats',
 						qs: {
-							limit: '{{.options.limit}}',
-							offset: '{{.options.offset}}',
-							skip_users: '{{.options.skip_users}}',
-							order: '{{.options.order}}',
-							filter: '{{.options.filter}}',
-							query: '{{.options.query}}',
+							limit: '={{$parameter.options.limit}}',
+							offset: '={{$parameter.options.offset}}',
+							skip_users: '={{$parameter.options.skip_users}}',
+							order: '={{$parameter.options.order}}',
+							filter: '={{$parameter.options.filter}}',
+							query: '={{$parameter.options.query}}',
 						},
 					},
 				},
@@ -47,12 +47,12 @@ export const chatsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/chats/{{$parameter.chatId}}/media',
+						url: '={{$parameter.accountId}}/chats/{{$parameter.chatId}}/media',
 						qs: {
-							type: '{{.options.type}}',
-							limit: '{{.options.limit}}',
-							offset: '{{.options.offset}}',
-							skip_users: '{{.options.skip_users}}',
+							type: '={{$parameter.options.type}}',
+							limit: '={{$parameter.options.limit}}',
+							offset: '={{$parameter.options.offset}}',
+							skip_users: '={{$parameter.options.skip_users}}',
 						},
 					},
 				},
@@ -65,7 +65,7 @@ export const chatsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/chats/{{$parameter.chatId}}/notifications/mute',
+						url: '={{$parameter.accountId}}/chats/{{$parameter.chatId}}/notifications/mute',
 					},
 				},
 			},
@@ -77,7 +77,7 @@ export const chatsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/chats/{{$parameter.chatId}}/typing',
+						url: '={{$parameter.accountId}}/chats/{{$parameter.chatId}}/typing',
 					},
 				},
 			},
@@ -89,7 +89,7 @@ export const chatsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '{{.accountId}}/chats/{{$parameter.chatId}}/notifications/mute',
+						url: '={{$parameter.accountId}}/chats/{{$parameter.chatId}}/notifications/mute',
 					},
 				},
 			},

@@ -28,12 +28,12 @@ export const notificationsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/notifications',
+						url: '={{$parameter.accountId}}/notifications',
 						qs: {
-							type: '{{.options.type}}',
-							limit: '{{.options.limit}}',
-							from_id: '{{.options.from_id}}',
-							skip_users: '{{.options.skip_users}}',
+							type: '={{$parameter.options.type}}',
+							limit: '={{$parameter.options.limit}}',
+							from_id: '={{$parameter.options.from_id}}',
+							skip_users: '={{$parameter.options.skip_users}}',
 						},
 					},
 				},
@@ -46,7 +46,7 @@ export const notificationsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/notifications/counts',
+						url: '={{$parameter.accountId}}/notifications/counts',
 					},
 				},
 			},
@@ -58,7 +58,7 @@ export const notificationsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/notifications/tabs-order',
+						url: '={{$parameter.accountId}}/notifications/tabs-order',
 					},
 				},
 			},
@@ -70,7 +70,7 @@ export const notificationsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '{{.accountId}}/notifications/mark-all-as-read',
+						url: '={{$parameter.accountId}}/notifications/mark-all-as-read',
 					},
 				},
 			},
@@ -82,9 +82,9 @@ export const notificationsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '{{.accountId}}/notifications/search-users',
+						url: '={{$parameter.accountId}}/notifications/search-users',
 						qs: {
-							query: '{{.query}}',
+							query: '={{$parameter.query}}',
 						},
 					},
 				},
@@ -97,9 +97,9 @@ export const notificationsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PUT',
-						url: '{{.accountId}}/notifications/tabs-order',
+						url: '={{$parameter.accountId}}/notifications/tabs-order',
 						body: {
-							order: '{{.order}}',
+							order: '={{$parameter.order}}',
 						},
 					},
 				},

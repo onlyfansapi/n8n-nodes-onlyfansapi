@@ -25,9 +25,9 @@ export const clientSessionsDescription: INodeProperties[] = [
 						method: 'POST',
 						url: '/client-sessions',
 						body: {
-							display_name: '{{.display_name}}',
-							client_reference_id: '{{.additionalFields.client_reference_id}}',
-							proxy_country: '{{.additionalFields.proxy_country}}',
+							display_name: '={{$parameter.display_name}}',
+							client_reference_id: '={{$parameter.additionalFields.client_reference_id}}',
+							proxy_country: '={{$parameter.additionalFields.proxy_country}}',
 						},
 					},
 				},
