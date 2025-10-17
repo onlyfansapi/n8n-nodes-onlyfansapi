@@ -26,7 +26,7 @@ export const savedForLaterMessagesDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PATCH',
-						url: '={{$parameter.accountId}}/saved-for-later/messages/settings/disable-automatic-messaging',
+						url: '{{.accountId}}/saved-for-later/messages/settings/disable-automatic-messaging',
 					},
 				},
 			},
@@ -38,9 +38,9 @@ export const savedForLaterMessagesDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PATCH',
-						url: '={{$parameter.accountId}}/saved-for-later/messages/settings/enable-or-update-automatic-messaging',
+						url: '{{.accountId}}/saved-for-later/messages/settings/enable-or-update-automatic-messaging',
 						body: {
-							period: '={{$parameter.period}}',
+							period: '{{.period}}',
 						},
 					},
 				},
@@ -53,10 +53,10 @@ export const savedForLaterMessagesDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/saved-for-later/messages',
+						url: '{{.accountId}}/saved-for-later/messages',
 						qs: {
-							limit: '={{$parameter.options.limit}}',
-							offset: '={{$parameter.options.offset}}',
+							limit: '{{$parameter.options.limit}}',
+							offset: '{{$parameter.options.offset}}',
 						},
 					},
 				},
@@ -69,7 +69,7 @@ export const savedForLaterMessagesDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/saved-for-later/messages/settings',
+						url: '{{.accountId}}/saved-for-later/messages/settings',
 					},
 				},
 			},

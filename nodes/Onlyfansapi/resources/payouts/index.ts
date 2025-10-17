@@ -29,7 +29,7 @@ export const payoutsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/payouts/balances',
+						url: '{{.accountId}}/payouts/balances',
 					},
 				},
 			},
@@ -41,11 +41,11 @@ export const payoutsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/payouts/earning-statistics',
-						qs: {
-							startDate: '={{$parameter.options.startDate}}',
-							endDate: '={{$parameter.options.endDate}}',
-						},
+						url: '{{.accountId}}/payouts/earning-statistics',
+					},
+					send: {
+						type: 'query',
+						property: 'options',
 					},
 				},
 			},
@@ -57,7 +57,7 @@ export const payoutsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/payouts/eligibility',
+						url: '{{.accountId}}/payouts/eligibility',
 					},
 				},
 			},
@@ -69,11 +69,11 @@ export const payoutsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/payouts/payout-requests',
-						qs: {
-							limit: '={{$parameter.options.limit}}',
-							offset: '={{$parameter.options.offset}}',
-						},
+						url: '{{.accountId}}/payouts/payout-requests',
+					},
+					send: {
+						type: 'query',
+						property: 'options',
 					},
 				},
 			},
@@ -85,11 +85,11 @@ export const payoutsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/payouts/transactions',
-						qs: {
-							limit: '={{$parameter.options.limit}}',
-							marker: '={{$parameter.options.marker}}',
-						},
+						url: '{{.accountId}}/payouts/transactions',
+					},
+					send: {
+						type: 'query',
+						property: 'options',
 					},
 				},
 			},
@@ -101,7 +101,7 @@ export const payoutsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '={{$parameter.accountId}}/payouts/request-manual-withdrawal',
+						url: '{{.accountId}}/payouts/request-manual-withdrawal',
 					},
 				},
 			},
@@ -113,9 +113,9 @@ export const payoutsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PATCH',
-						url: '={{$parameter.accountId}}/payouts/payout-frequency',
+						url: '{{.accountId}}/payouts/payout-frequency',
 						body: {
-							frequency: '={{$parameter.withdrawalPeriod}}',
+							frequency: '{{.withdrawalPeriod}}',
 						},
 					},
 				},

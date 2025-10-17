@@ -27,10 +27,10 @@ export const trackingLinksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '={{$parameter.accountId}}/tracking-links',
+						url: '{{.accountId}}/tracking-links',
 						body: {
-							campaignName: '={{$parameter.campaignName}}',
-							endDate: '={{$parameter.additionalFields.endDate}}',
+							campaignName: '{{.campaignName}}',
+							endDate: '{{.additionalFields.endDate}}',
 						},
 					},
 				},
@@ -43,7 +43,7 @@ export const trackingLinksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '={{$parameter.accountId}}/tracking-links/{{$parameter.trackingLinkId}}',
+						url: '{{.accountId}}/tracking-links/{{$parameter.trackingLinkId}}',
 					},
 				},
 			},
@@ -55,16 +55,16 @@ export const trackingLinksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/tracking-links',
+						url: '{{.accountId}}/tracking-links',
 						qs: {
-							startDate: '={{$parameter.options.startDate}}',
-							endDate: '={{$parameter.options.endDate}}',
-							with_deleted: '={{$parameter.options.with_deleted}}',
-							sortby: '={{$parameter.options.sortby}}',
-							sort: '={{$parameter.options.sort}}',
-							limit: '={{$parameter.options.limit}}',
-							offset: '={{$parameter.options.offset}}',
-							synchronous: '={{$parameter.options.synchronous}}',
+							startDate: '{{$parameter.options.startDate}}',
+							endDate: '{{$parameter.options.endDate}}',
+							with_deleted: '{{$parameter.options.with_deleted}}',
+							sortby: '{{$parameter.options.sortby}}',
+							sort: '{{$parameter.options.sort}}',
+							limit: '{{$parameter.options.limit}}',
+							offset: '{{$parameter.options.offset}}',
+							synchronous: '{{$parameter.options.synchronous}}',
 						},
 					},
 				},
@@ -77,10 +77,10 @@ export const trackingLinksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/tracking-links/{{$parameter.trackingLinkId}}/spenders',
+						url: '{{.accountId}}/tracking-links/{{$parameter.trackingLinkId}}/spenders',
 						qs: {
-							limit: '={{$parameter.options.limit}}',
-							offset: '={{$parameter.options.offset}}',
+							limit: '{{$parameter.options.limit}}',
+							offset: '{{$parameter.options.offset}}',
 						},
 					},
 				},
@@ -93,10 +93,10 @@ export const trackingLinksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/tracking-links/{{$parameter.trackingLinkId}}/subscribers',
+						url: '{{.accountId}}/tracking-links/{{$parameter.trackingLinkId}}/subscribers',
 						qs: {
-							limit: '={{$parameter.options.limit}}',
-							offset: '={{$parameter.options.offset}}',
+							limit: '{{$parameter.options.limit}}',
+							offset: '{{$parameter.options.offset}}',
 						},
 					},
 				},

@@ -28,10 +28,10 @@ export const statisticsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/statistics/total-transactions',
+						url: '{{.accountId}}/statistics/total-transactions',
 						qs: {
-							start_date: '={{$parameter.options.start_date}}',
-							end_date: '={{$parameter.options.end_date}}',
+							start_date: '{{$parameter.options.start_date}}',
+							end_date: '{{$parameter.options.end_date}}',
 						},
 					},
 				},
@@ -44,11 +44,11 @@ export const statisticsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/statistics/statements/earnings',
+						url: '{{.accountId}}/statistics/statements/earnings',
 						qs: {
-							start_date: '={{$parameter.start_date}}',
-							end_date: '={{$parameter.options.end_date}}',
-							type: '={{$parameter.options.type}}',
+							start_date: '{{$parameter.start_date}}',
+							end_date: '{{$parameter.options.end_date}}',
+							type: '{{$parameter.options.type}}',
 						},
 					},
 				},
@@ -61,10 +61,10 @@ export const statisticsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/statistics/profile-visitors',
+						url: '{{.accountId}}/statistics/profile-visitors',
 						qs: {
-							start_date: '={{$parameter.start_date}}',
-							end_date: '={{$parameter.options.end_date}}',
+							start_date: '{{$parameter.start_date}}',
+							end_date: '{{$parameter.options.end_date}}',
 						},
 					},
 				},
@@ -77,10 +77,10 @@ export const statisticsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/statistics/subscriber-metrics',
+						url: '{{.accountId}}/statistics/subscriber-metrics',
 						qs: {
-							start_date: '={{$parameter.start_date}}',
-							end_date: '={{$parameter.options.end_date}}',
+							start_date: '{{$parameter.start_date}}',
+							end_date: '{{$parameter.options.end_date}}',
 						},
 					},
 				},
@@ -93,10 +93,10 @@ export const statisticsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/statistics/subscriber-statistics',
+						url: '{{.accountId}}/statistics/subscriber-statistics',
 						qs: {
-							start_date: '={{$parameter.start_date}}',
-							end_date: '={{$parameter.options.end_date}}',
+							start_date: '{{$parameter.start_date}}',
+							end_date: '{{$parameter.options.end_date}}',
 						},
 					},
 				},
@@ -109,11 +109,11 @@ export const statisticsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/statistics/overview',
+						url: '{{.accountId}}/statistics/overview',
 						qs: {
-							start_date: '={{$parameter.start_date}}',
-							end_date: '={{$parameter.options.end_date}}',
-							type: '={{$parameter.options.type}}',
+							start_date: '{{$parameter.start_date}}',
+							end_date: '{{$parameter.options.end_date}}',
+							type: '{{$parameter.options.type}}',
 						},
 					},
 				},

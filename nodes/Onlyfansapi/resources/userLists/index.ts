@@ -30,9 +30,9 @@ export const userListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '={{$parameter.accountId}}/user-lists/{{$parameter.userListId}}/users',
+						url: '{{.accountId}}/user-lists/{{$parameter.userListId}}/users',
 						body: {
-							user_ids: '={{$parameter.user_ids}}',
+							user_ids: '{{.user_ids}}',
 						},
 					},
 				},
@@ -45,9 +45,9 @@ export const userListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '={{$parameter.accountId}}/user-lists',
+						url: '{{.accountId}}/user-lists',
 						body: {
-							name: '={{$parameter.name}}',
+							name: '{{.name}}',
 						},
 					},
 				},
@@ -60,7 +60,7 @@ export const userListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '={{$parameter.accountId}}/user-lists/{{$parameter.userListId}}',
+						url: '{{.accountId}}/user-lists/{{$parameter.userListId}}',
 					},
 				},
 			},
@@ -72,7 +72,7 @@ export const userListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/user-lists/{{$parameter.userListId}}',
+						url: '{{.accountId}}/user-lists/{{$parameter.userListId}}',
 					},
 				},
 			},
@@ -84,10 +84,10 @@ export const userListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/user-lists',
+						url: '{{.accountId}}/user-lists',
 						qs: {
-							limit: '={{$parameter.options.limit}}',
-							offset: '={{$parameter.options.offset}}',
+							limit: '{{$parameter.options.limit}}',
+							offset: '{{$parameter.options.offset}}',
 						},
 					},
 				},
@@ -100,7 +100,7 @@ export const userListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/user-lists/{{$parameter.userListId}}/users',
+						url: '{{.accountId}}/user-lists/{{$parameter.userListId}}/users',
 					},
 				},
 			},
@@ -112,7 +112,7 @@ export const userListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '={{$parameter.accountId}}/user-lists/{{$parameter.userListId}}/users/{{$parameter.userId}}',
+						url: '{{.accountId}}/user-lists/{{$parameter.userListId}}/users/{{$parameter.userId}}',
 					},
 				},
 			},
@@ -124,9 +124,9 @@ export const userListsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PUT',
-						url: '={{$parameter.accountId}}/user-lists/{{$parameter.userListId}}',
+						url: '{{.accountId}}/user-lists/{{$parameter.userListId}}',
 						body: {
-							name: '={{$parameter.name}}',
+							name: '{{.name}}',
 						},
 					},
 				},

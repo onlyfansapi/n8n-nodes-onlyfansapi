@@ -25,10 +25,10 @@ export const chargebacksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/chargebacks/ratio',
+						url: '{{.accountId}}/chargebacks/ratio',
 						qs: {
-							start_date: '={{$parameter.start_date}}',
-							end_date: '={{$parameter.end_date}}',
+							start_date: '{{.start_date}}',
+							end_date: '{{.end_date}}',
 						},
 					},
 				},
@@ -41,12 +41,12 @@ export const chargebacksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/chargebacks',
+						url: '{{.accountId}}/chargebacks',
 						qs: {
-							start_date: '={{$parameter.start_date}}',
-							end_date: '={{$parameter.end_date}}',
-							limit: '={{$parameter.options.limit}}',
-							offset: '={{$parameter.options.offset}}',
+							start_date: '{{.start_date}}',
+							end_date: '{{.end_date}}',
+							limit: '{{.options.limit}}',
+							offset: '{{.options.offset}}',
 						},
 					},
 				},
@@ -59,10 +59,10 @@ export const chargebacksDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/chargebacks/statistics',
+						url: '{{.accountId}}/chargebacks/statistics',
 						qs: {
-							start_date: '={{$parameter.start_date}}',
-							end_date: '={{$parameter.end_date}}',
+							start_date: '{{.start_date}}',
+							end_date: '{{.end_date}}',
 						},
 					},
 				},

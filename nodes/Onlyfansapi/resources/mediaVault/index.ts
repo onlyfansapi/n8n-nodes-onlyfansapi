@@ -24,9 +24,9 @@ export const mediaVaultDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '={{$parameter.accountId}}/media/vault',
+						url: '{{.accountId}}/media/vault',
 						body: {
-							mediaIds: '={{$parameter.mediaIds}}',
+							mediaIds: '{{.mediaIds}}',
 						},
 					},
 				},
@@ -39,15 +39,15 @@ export const mediaVaultDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/media/vault',
+						url: '{{.accountId}}/media/vault',
 						qs: {
-							query: '={{$parameter.options.query}}',
-							field: '={{$parameter.options.field}}',
-							type: '={{$parameter.options.type}}',
-							list: '={{$parameter.options.list}}',
-							sort: '={{$parameter.options.sort}}',
-							limit: '={{$parameter.options.limit}}',
-							offset: '={{$parameter.options.offset}}',
+							query: '{{.options.query}}',
+							field: '{{.options.field}}',
+							type: '{{.options.type}}',
+							list: '{{.options.list}}',
+							sort: '{{.options.sort}}',
+							limit: '{{.options.limit}}',
+							offset: '{{.options.offset}}',
 						},
 					},
 				},

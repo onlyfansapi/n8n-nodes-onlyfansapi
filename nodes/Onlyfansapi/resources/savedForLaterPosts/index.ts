@@ -26,7 +26,7 @@ export const savedForLaterPostsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PATCH',
-						url: '={{$parameter.accountId}}/saved-for-later/posts/settings/disable-automatic-posting',
+						url: '{{.accountId}}/saved-for-later/posts/settings/disable-automatic-posting',
 					},
 				},
 			},
@@ -38,9 +38,9 @@ export const savedForLaterPostsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PATCH',
-						url: '={{$parameter.accountId}}/saved-for-later/posts/settings/enable-or-update-automatic-posting',
+						url: '{{.accountId}}/saved-for-later/posts/settings/enable-or-update-automatic-posting',
 						body: {
-							period: '={{$parameter.period}}',
+							period: '{{.period}}',
 						},
 					},
 				},
@@ -53,10 +53,10 @@ export const savedForLaterPostsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/saved-for-later/posts',
+						url: '{{.accountId}}/saved-for-later/posts',
 						qs: {
-							limit: '={{$parameter.options.limit}}',
-							offset: '={{$parameter.options.offset}}',
+							limit: '{{$parameter.options.limit}}',
+							offset: '{{$parameter.options.offset}}',
 						},
 					},
 				},
@@ -69,7 +69,7 @@ export const savedForLaterPostsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/saved-for-later/posts/settings',
+						url: '{{.accountId}}/saved-for-later/posts/settings',
 					},
 				},
 			},

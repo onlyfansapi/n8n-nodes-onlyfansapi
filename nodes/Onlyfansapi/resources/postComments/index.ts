@@ -29,11 +29,11 @@ export const postCommentsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}/comments',
+						url: '{{.accountId}}/posts/{{$parameter.postId}}/comments',
 						qs: {
-							text: '={{$parameter.text}}',
-							answerTo: '={{$parameter.options.answerTo}}',
-							giphyId: '={{$parameter.options.giphyId}}',
+							text: '{{.text}}',
+							answerTo: '{{.options.answerTo}}',
+							giphyId: '{{.options.giphyId}}',
 						},
 					},
 				},
@@ -46,7 +46,7 @@ export const postCommentsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}/comments/{{$parameter.commentId}}',
+						url: '{{.accountId}}/posts/{{$parameter.postId}}/comments/{{$parameter.commentId}}',
 					},
 				},
 			},
@@ -58,11 +58,11 @@ export const postCommentsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}/comments',
+						url: '{{.accountId}}/posts/{{$parameter.postId}}/comments',
 						qs: {
-							limit: '={{$parameter.options.limit}}',
-							offset: '={{$parameter.options.offset}}',
-							sort: '={{$parameter.options.sort}}',
+							limit: '{{.options.limit}}',
+							offset: '{{.options.offset}}',
+							sort: '{{.options.sort}}',
 						},
 					},
 				},
@@ -75,7 +75,7 @@ export const postCommentsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}/comments/{{$parameter.commentId}}/like',
+						url: '{{.accountId}}/posts/{{$parameter.postId}}/comments/{{$parameter.commentId}}/like',
 					},
 				},
 			},
@@ -87,7 +87,7 @@ export const postCommentsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}/comments/{{$parameter.commentId}}/pin',
+						url: '{{.accountId}}/posts/{{$parameter.postId}}/comments/{{$parameter.commentId}}/pin',
 					},
 				},
 			},
@@ -99,7 +99,7 @@ export const postCommentsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}/comments/{{$parameter.commentId}}/like',
+						url: '{{.accountId}}/posts/{{$parameter.postId}}/comments/{{$parameter.commentId}}/like',
 					},
 				},
 			},
@@ -111,7 +111,7 @@ export const postCommentsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '={{$parameter.accountId}}/posts/{{$parameter.postId}}/comments/{{$parameter.commentId}}/pin',
+						url: '{{.accountId}}/posts/{{$parameter.postId}}/comments/{{$parameter.commentId}}/pin',
 					},
 				},
 			},

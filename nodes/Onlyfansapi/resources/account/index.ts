@@ -38,7 +38,7 @@ export const accountDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/me',
+						url: '{{.accountId}}/me',
 					},
 				},
 			},
@@ -67,7 +67,7 @@ export const accountDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/me/model-start-date',
+						url: '{{.accountId}}/me/model-start-date',
 					},
 				},
 			},

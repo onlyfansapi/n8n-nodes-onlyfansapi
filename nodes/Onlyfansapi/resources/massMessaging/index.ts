@@ -28,7 +28,7 @@ export const massMessagingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/mass-messaging/{{$parameter.messageId}}',
+						url: '{{.accountId}}/mass-messaging/{{$parameter.messageId}}',
 					},
 				},
 			},
@@ -40,7 +40,7 @@ export const massMessagingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/mass-messaging',
+						url: '{{.accountId}}/mass-messaging',
 					},
 				},
 			},
@@ -52,12 +52,12 @@ export const massMessagingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/mass-messaging/statistics',
+						url: '{{.accountId}}/mass-messaging/statistics',
 						qs: {
-							limit: '={{$parameter.options.limit}}',
-							offset: '={{$parameter.options.offset}}',
-							query: '={{$parameter.options.query}}',
-							type: '={{$parameter.options.type}}',
+							limit: '{{.options.limit}}',
+							offset: '{{.options.offset}}',
+							query: '{{.options.query}}',
+							type: '{{.options.type}}',
 						},
 					},
 				},
@@ -70,17 +70,17 @@ export const massMessagingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '={{$parameter.accountId}}/mass-messaging',
+						url: '{{.accountId}}/mass-messaging',
 						body: {
-							text: '={{$parameter.text}}',
-							userLists: '={{$parameter.additionalFields.userLists}}',
-							userIds: '={{$parameter.additionalFields.userIds}}',
-							lockedText: '={{$parameter.additionalFields.lockedText}}',
-							price: '={{$parameter.additionalFields.price}}',
-							mediaFiles: '={{$parameter.additionalFields.mediaFiles}}',
-							previews: '={{$parameter.additionalFields.previews}}',
-							scheduledDate: '={{$parameter.additionalFields.scheduledDate}}',
-							saveForLater: '={{$parameter.additionalFields.saveForLater}}',
+							text: '{{.text}}',
+							userLists: '{{.additionalFields.userLists}}',
+							userIds: '{{.additionalFields.userIds}}',
+							lockedText: '{{.additionalFields.lockedText}}',
+							price: '{{.additionalFields.price}}',
+							mediaFiles: '{{.additionalFields.mediaFiles}}',
+							previews: '{{.additionalFields.previews}}',
+							scheduledDate: '{{.additionalFields.scheduledDate}}',
+							saveForLater: '{{.additionalFields.saveForLater}}',
 						},
 					},
 				},
@@ -93,7 +93,7 @@ export const massMessagingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '={{$parameter.accountId}}/mass-messaging/{{$parameter.messageId}}',
+						url: '{{.accountId}}/mass-messaging/{{$parameter.messageId}}',
 					},
 				},
 			},
@@ -105,16 +105,16 @@ export const massMessagingDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PUT',
-						url: '={{$parameter.accountId}}/mass-messaging/{{$parameter.messageId}}',
+						url: '{{.accountId}}/mass-messaging/{{$parameter.messageId}}',
 						body: {
-							text: '={{$parameter.text}}',
-							userLists: '={{$parameter.additionalFields.userLists}}',
-							userIds: '={{$parameter.additionalFields.userIds}}',
-							lockedText: '={{$parameter.additionalFields.lockedText}}',
-							price: '={{$parameter.additionalFields.price}}',
-							mediaFiles: '={{$parameter.additionalFields.mediaFiles}}',
-							previews: '={{$parameter.additionalFields.previews}}',
-							scheduledDate: '={{$parameter.additionalFields.scheduledDate}}',
+							text: '{{.text}}',
+							userLists: '{{.additionalFields.userLists}}',
+							userIds: '{{.additionalFields.userIds}}',
+							lockedText: '{{.additionalFields.lockedText}}',
+							price: '{{.additionalFields.price}}',
+							mediaFiles: '{{.additionalFields.mediaFiles}}',
+							previews: '{{.additionalFields.previews}}',
+							scheduledDate: '{{.additionalFields.scheduledDate}}',
 						},
 					},
 				},

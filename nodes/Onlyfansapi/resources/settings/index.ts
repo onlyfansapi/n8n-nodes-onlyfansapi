@@ -25,9 +25,9 @@ export const settingsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '={{$parameter.accountId}}/settings/username-exists',
+						url: '{{.accountId}}/settings/username-exists',
 						body: {
-							username: '={{$parameter.username}}',
+							username: '{{.username}}',
 						},
 					},
 				},
@@ -40,7 +40,7 @@ export const settingsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '={{$parameter.accountId}}/settings',
+						url: '{{.accountId}}/settings',
 					},
 				},
 			},
@@ -52,16 +52,16 @@ export const settingsDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'POST',
-						url: '={{$parameter.accountId}}/settings/profile',
+						url: '{{.accountId}}/settings/profile',
 						body: {
-							username: '={{$parameter.updateFields.username}}',
-							name: '={{$parameter.updateFields.name}}',
-							avatar: '={{$parameter.updateFields.avatar}}',
-							header: '={{$parameter.updateFields.header}}',
-							about: '={{$parameter.updateFields.about}}',
-							location: '={{$parameter.updateFields.location}}',
-							website: '={{$parameter.updateFields.website}}',
-							wishlist: '={{$parameter.updateFields.wishlist}}',
+							username: '{{.updateFields.username}}',
+							name: '{{.updateFields.name}}',
+							avatar: '{{.updateFields.avatar}}',
+							header: '{{.updateFields.header}}',
+							about: '{{.updateFields.about}}',
+							location: '{{.updateFields.location}}',
+							website: '{{.updateFields.website}}',
+							wishlist: '{{.updateFields.wishlist}}',
 						},
 					},
 				},

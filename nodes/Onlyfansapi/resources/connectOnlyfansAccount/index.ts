@@ -54,9 +54,9 @@ export const connectOnlyfansAccountDescription: INodeProperties[] = [
 						method: 'POST',
 						url: '/authenticate',
 						body: {
-							email: '={{$parameter.email}}',
-							password: '={{$parameter.password}}',
-							proxyCountry: '={{$parameter.proxyCountry}}',
+							email: '{{.email}}',
+							password: '{{.password}}',
+							proxyCountry: '{{.proxyCountry}}',
 						},
 					},
 				},
@@ -71,7 +71,7 @@ export const connectOnlyfansAccountDescription: INodeProperties[] = [
 						method: 'PUT',
 						url: '=/authenticate/{{$parameter.attemptId}}',
 						body: {
-							code: '={{$parameter.code}}',
+							code: '{{.code}}',
 						},
 					},
 				},
