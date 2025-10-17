@@ -11,7 +11,7 @@ export class OnlyfansapiApi implements ICredentialType {
 	displayName = 'OnlyFans API';
 
 	// Link to your community node's README
-	documentationUrl = 'https://github.com/org/-onlyfansapi?tab=readme-ov-file#credentials';
+	documentationUrl = 'https://github.com/onlyfansapi/n8n-nodes-onlyfansapi?tab=readme-ov-file#credentials';
 
 	properties: INodeProperties[] = [
 		{
