@@ -30,10 +30,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/OnlyfansapiApi.credentials.js"
+      "dist/credentials/OnlyFansApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/Onlyfansapi/Onlyfansapi.node.js"
+      "dist/nodes/OnlyFans/OnlyFans.node.js"
     ]
   },
   "devDependencies": {
