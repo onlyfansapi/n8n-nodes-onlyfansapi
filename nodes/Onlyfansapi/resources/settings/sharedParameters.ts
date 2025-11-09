@@ -1,2 +1,0 @@
-export { accountIdParameter } from '../sharedParameters';
-
