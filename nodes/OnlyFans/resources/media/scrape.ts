@@ -1,48 +1,58 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const scrapeMediaFromTheOnlyFansCDNResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'The CDN URL to Scrape',
-			name: 'url',
-			type: 'string',
-			default: 'https://cdn2.onlyfans.com/files/e/e5/123/600x400_123.jpg?Tag=2&u=123&Policy=123&Signature=signature&Key-Pair-Id=123',
-			description: 'The CDN URL to scrape. **Keep in mind that these URLs expire fast.**.',
-		},
-		{
-			displayName: 'The OnlyFans Vault Media ID',
-			name: 'media_id',
-			type: 'number',
-			default: 1234567890,
-			description: 'The OnlyFans Vault Media ID. **Can be used instead of the `URL`.**.',
-		},
-		{
-			displayName: 'The File Type to Scrape',
-			name: 'file_type',
-			type: 'string',
-			default: 'full',
-			description: 'The file type to scrape. Only allowed when using `media_id`.',
-		},
-		{
-			displayName: 'The Expiration Date of Our Returned `Temporary_url`',
-			name: 'expiration_date',
-			type: 'string',
-			default: '2025-01-01 00:00:00',
-			description: 'The expiration date of our returned `temporary_url`. Default of 5 minutes. Must be null if `public` is true.',
-		},
-		{
-			displayName: 'Set to True if You Want to Have the File Uploaded to Our Public CDN (No Signed URL Needed to Access)',
-			name: 'public',
-			type: 'boolean',
-			default: false,
-			description: 'Whether to have the file uploaded to our public CDN (no signed URL needed to access). Default is false. Must be null if `expiration_date` is set.',
-		},
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when scraping media from the CDN',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'CDN URL',
+				name: 'url',
+				type: 'string',
+				default: '',
+				description: 'The CDN URL to scrape. Keep in mind that these URLs expire fast.',
+			},
+			{
+				displayName: 'Expiration Date',
+				name: 'expiration_date',
+				type: 'string',
+				default: '',
+				description: 'Expiration date of the returned temporary_url. Default ~5 minutes. Must be null if public is true.',
+			},
+			{
+				displayName: 'File Type',
+				name: 'file_type',
+				type: 'string',
+				default: 'full',
+				description: 'The file type to scrape. Only allowed when using media_id.',
+			},
+			{
+				displayName: 'Media ID',
+				name: 'media_id',
+				type: 'number',
+				default: 0,
+				description: 'The OnlyFans Vault media ID. Can be used instead of the URL.',
+			},
+			{
+				displayName: 'Public',
+				name: 'public',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to upload the file to the public CDN (no signed URL needed). Must be null if expiration_date is set.',
+			},
+		],
+	},
 ];
 
 export const scrapeMediaFromTheOnlyFansCDNOperation = {

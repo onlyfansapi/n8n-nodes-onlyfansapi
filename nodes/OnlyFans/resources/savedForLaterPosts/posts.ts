@@ -1,31 +1,40 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listSavedForLaterPostsResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'Maximum Number of Posts to Return (Default = 10)',
-			name: 'limit',
-			type: 'number',
-			description: 'Max number of results to return',
-			typeOptions: {
-				minValue: 1,
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when listing saved-for-later posts',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				description: 'Max number of results to return',
+				typeOptions: {
+					minValue: 1,
+				},
+				default: 50,
 			},
-			default: 50,
-			required: true,
-		},
-		{
-			displayName: 'Offset for Pagination (Default = 0)',
-			name: 'offset',
-			type: 'number',
-			default: 0,
-			required: true,
-		},
+			{
+				displayName: 'Offset',
+				name: 'offset',
+				type: 'number',
+				default: 0,
+				description: 'Offset for pagination (default 0)',
+			},
+		],
+	},
 ];
 
 export const listSavedForLaterPostsOperation = {

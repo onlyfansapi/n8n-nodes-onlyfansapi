@@ -1,13 +1,13 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listMassMessageQueueResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
 ];
 
 export const listMassMessageQueueOperation = {
@@ -25,72 +25,87 @@ export const listMassMessageQueueOperation = {
 };
 
 export const sendMassMessageResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'Array of User List IDs that the Mass Message Will Be Sent To',
-			name: 'userLists',
-			type: 'string',
-			default: 'fans,recent,following,rebill_off,tagged,1234567890',
-		},
-		{
-			displayName: 'Array of User IDs that the Mass Message Will Be Sent To',
-			name: 'userIds',
-			type: 'string',
-			default: '1234567890',
-		},
-		{
-			displayName: 'The Message Text Content',
-			name: 'text',
-			type: 'string',
-			default: 'Hello!',
-			required: true,
-			description: 'The message text content',
-		},
-		{
-			displayName: 'Whether the Text Should Be Shown or Hidden',
-			name: 'lockedText',
-			type: 'boolean',
-			default: true,
-		},
-		{
-			displayName: 'Price for Paid Content (0 or Between 3-200)',
-			name: 'price',
-			type: 'number',
-			default: 100,
-			description: 'Price for paid content (0 or between 3-200). In case this is not zero, **mediaFiles** is required.',
-		},
-		{
-			displayName: 'Array of Media File Upload Prefixed_ids, or OF Media IDs (Required if Price Is Not 0)',
-			name: 'mediaFiles',
-			type: 'string',
-			default: 'ofapi_media_abc123,1234567890',
-			description: 'Array of media file upload prefixed_ids, or OF media IDs (required if price is not 0). Will be hidden if `price` is provided.',
-		},
-		{
-			displayName: 'Array of Media File Upload Prefixed_ids, or OF Media IDs (Required if Price Is Not 0)',
-			name: 'previews',
-			type: 'string',
-			default: 'ofapi_media_abc123,1234567890',
-			description: 'Array of media file upload prefixed_ids, or OF media IDs (required if price is not 0). Will be shown if `price` is provided. All `previews` values must also exist in the `mediaFiles` array.',
-		},
-		{
-			displayName: 'Schedule the Chat Message in the Future (UTC Timezone)',
-			name: 'scheduledDate',
-			type: 'string',
-			default: '2025-01-01T00:00:00.000Z',
-		},
-		{
-			displayName: 'Add Your Message to the "Saved for Later" Queue',
-			name: 'saveForLater',
-			type: 'boolean',
-			default: true,
-		},
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'The Message Text Content',
+		name: 'text',
+		type: 'string',
+		default: 'Hello!',
+		required: true,
+		description: 'The message text content',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when sending a mass message',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Locked Text',
+				name: 'lockedText',
+				type: 'boolean',
+				default: false,
+				description: 'Whether the text should be shown or hidden',
+			},
+			{
+				displayName: 'Media Files',
+				name: 'mediaFiles',
+				type: 'string',
+				default: '',
+				description: 'Array of media file upload prefixed_ids, or OF media IDs',
+			},
+			{
+				displayName: 'Previews',
+				name: 'previews',
+				type: 'string',
+				default: '',
+				description: 'Array of media IDs used as previews; all values must also exist in mediaFiles',
+			},
+			{
+				displayName: 'Price',
+				name: 'price',
+				type: 'number',
+				default: 0,
+				description: 'Price for paid content (0 or between 3-200). If not zero, mediaFiles is required.',
+			},
+			{
+				displayName: 'Save For Later',
+				name: 'saveForLater',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to add your message to the "Saved for Later" queue',
+			},
+			{
+				displayName: 'Scheduled Date',
+				name: 'scheduledDate',
+				type: 'string',
+				default: '',
+				description: 'Schedule the chat message in the future (UTC timezone)',
+			},
+			{
+				displayName: 'User IDs',
+				name: 'userIds',
+				type: 'string',
+				default: '',
+				description: 'Array of user IDs that the mass message will be sent to',
+			},
+			{
+				displayName: 'User Lists',
+				name: 'userLists',
+				type: 'string',
+				default: '',
+				description: 'Array of user list IDs that the mass message will be sent to',
+			},
+		],
+	},
 ];
 
 export const sendMassMessageOperation = {

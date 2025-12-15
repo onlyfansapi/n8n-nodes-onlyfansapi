@@ -1,26 +1,37 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listTransactionsEarningsResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'Number of Transactions to Return',
-			name: 'limit',
-			type: 'string',
-			default: '10',
-		},
-		{
-			displayName: 'The Marker Used for Pagination',
-			name: 'marker',
-			type: 'string',
-			default: '1739155047',
-			description: 'The marker used for pagination. Default: `null`.',
-		},
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when listing payout transactions',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'string',
+				default: '10',
+				description: 'Number of transactions to return',
+			},
+			{
+				displayName: 'Marker',
+				name: 'marker',
+				type: 'string',
+				default: '',
+				description: 'Marker used for pagination. Default null.',
+			},
+		],
+	},
 ];
 
 export const listTransactionsEarningsOperation = {

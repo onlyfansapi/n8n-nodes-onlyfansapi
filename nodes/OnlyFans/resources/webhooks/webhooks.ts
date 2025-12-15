@@ -18,29 +18,40 @@ export const listWebhooksOperation = {
 };
 
 export const createWebhookResource: INodeProperties[] = [
-		{
-			displayName: 'The URL of Your Webhook Endpoint',
-			name: 'endpoint_url',
-			type: 'string',
-			default: 'https://example.com',
-			required: true,
-			description: 'The URL of your webhook endpoint',
-		},
-		{
-			displayName: 'Optionally, Add a Signing Secret to Protect Your Webhook',
-			name: 'signing_secret',
-			type: 'string',
-			typeOptions: { password: true },
-			default: '7',
-		},
-		{
-			displayName: 'An Array of Webhook Events to Subscribe To',
-			name: 'events',
-			type: 'string',
-			default: 'accounts.connected,subscriptions.new',
-			required: true,
-			description: 'An array of webhook events to subscribe to. For all options, refer to our **List Available Events** endpoint.',
-		},
+	{
+		displayName: 'The URL of Your Webhook Endpoint',
+		name: 'endpoint_url',
+		type: 'string',
+		default: 'https://example.com',
+		required: true,
+		description: 'The URL of your webhook endpoint',
+	},
+	{
+		displayName: 'An Array of Webhook Events to Subscribe To',
+		name: 'events',
+		type: 'string',
+		default: 'accounts.connected,subscriptions.new',
+		required: true,
+		description: 'An array of webhook events to subscribe to. For all options, refer to our **List Available Events** endpoint.',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters to include in the request',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Signing Secret',
+				name: 'signing_secret',
+				type: 'string',
+				typeOptions: { password: true },
+				default: '',
+				description: 'Optionally, add a signing secret to protect your webhook',
+			},
+		],
+	},
 ];
 
 export const createWebhookOperation = {

@@ -1,43 +1,54 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listNotificationsResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'Filter Notifications by a Specific Type',
-			name: 'type',
-			type: 'string',
-			default: 'mentions',
-		},
-		{
-			displayName: 'The Number of Notifications',
-			name: 'limit',
-			type: 'number',
-			typeOptions: {
-				minValue: 1,
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when listing notifications',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'string',
+				default: 'mentions',
+				description: 'Filter notifications by a specific type',
 			},
-			default: 50,
-			description: 'Max number of results to return',
-		},
-		{
-			displayName: 'Used for Pagination',
-			name: 'from_id',
-			type: 'number',
-			default: 123,
-			description: 'Used for pagination. This value should be the ID of the previous response\'s last notification.',
-		},
-		{
-			displayName: 'Whether to Skip User Details',
-			name: 'skip_users',
-			type: 'string',
-			default: 'all',
-			description: 'Whether to skip user details. Default `all`.',
-		},
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				typeOptions: {
+					minValue: 1,
+				},
+				default: 50,
+				description: 'Max number of results to return',
+			},
+			{
+				displayName: 'From ID',
+				name: 'from_id',
+				type: 'number',
+				default: 0,
+				description: 'Used for pagination; set to the last notification ID from the previous response',
+			},
+			{
+				displayName: 'Skip Users',
+				name: 'skip_users',
+				type: 'string',
+				default: 'all',
+				description: 'Whether to skip user details. Default all.',
+			},
+		],
+	},
 ];
 
 export const listNotificationsOperation = {

@@ -18,8 +18,22 @@ export async function executeResourceOperation(
 	// Get parameters from the node
 	const params: IDataObject = {};
 	const pathParams: string[] = [];
-	
+
 	for (const param of parameters) {
+		// Collections contain optional, nested fields that should be flattened
+		if (param.type === 'collection') {
+			const collectionValues = this.getNodeParameter(param.name, itemIndex, {}) as IDataObject;
+			for (const [key, value] of Object.entries(collectionValues)) {
+				if (value !== undefined && value !== '') {
+					params[key] = value;
+					if (endpointPath.includes(`{${key}}`)) {
+						pathParams.push(key);
+					}
+				}
+			}
+			continue;
+		}
+
 		const value = this.getNodeParameter(param.name, itemIndex);
 		if (value !== undefined && value !== '') {
 			params[param.name] = value;

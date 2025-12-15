@@ -1,36 +1,47 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listVaultListsResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'Optionally, Find a List by Its Name',
-			name: 'query',
-			type: 'string',
-			default: 'My list name',
-		},
-		{
-			displayName: 'Number of Media to Return per Page',
-			name: 'limit',
-			type: 'number',
-			typeOptions: {
-				minValue: 1,
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters to filter and paginate vault lists',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Query',
+				name: 'query',
+				type: 'string',
+				default: '',
+				description: 'Optionally, find a list by its name',
 			},
-			default: 50,
-			description: 'Max number of results to return',
-		},
-		{
-			displayName: 'The Offset Used for Pagination',
-			name: 'offset',
-			type: 'number',
-			default: 0,
-			description: 'The offset used for pagination. Default `0`.',
-		},
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				typeOptions: {
+					minValue: 1,
+				},
+				default: 50,
+				description: 'Max number of results to return',
+			},
+			{
+				displayName: 'Offset',
+				name: 'offset',
+				type: 'number',
+				default: 0,
+				description: 'The offset used for pagination. Default `0`.',
+			},
+		],
+	},
 ];
 
 export const listVaultListsOperation = {

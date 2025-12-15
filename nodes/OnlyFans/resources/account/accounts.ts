@@ -1,24 +1,37 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listAccountsResource: INodeProperties[] = [
-		{
-			displayName: 'Optionally, Filter by the OnlyFans ID',
-			name: 'onlyfans_id',
-			type: 'string',
-			default: '1234567890',
-		},
-		{
-			displayName: 'Optionally, Filter by the OnlyFans Username',
-			name: 'onlyfans_username',
-			type: 'string',
-			default: 'username',
-		},
-		{
-			displayName: 'Optionally, Filter by the OnlyFans Email',
-			name: 'onlyfans_email',
-			type: 'string',
-			default: 'creator@example.com',
-		},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional filters to refine the account list',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'OnlyFans ID',
+				name: 'onlyfans_id',
+				type: 'string',
+				default: '',
+				description: 'Optionally, filter by the OnlyFans ID',
+			},
+			{
+				displayName: 'OnlyFans Username',
+				name: 'onlyfans_username',
+				type: 'string',
+				default: '',
+				description: 'Optionally, filter by the OnlyFans username',
+			},
+			{
+				displayName: 'OnlyFans Email',
+				name: 'onlyfans_email',
+				type: 'string',
+				default: '',
+				description: 'Optionally, filter by the OnlyFans email',
+			},
+		],
+	},
 ];
 
 export const listAccountsOperation = {

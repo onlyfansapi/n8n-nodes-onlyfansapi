@@ -1,27 +1,37 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const getEarningStatisticsResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'The Start Date for Earning Statistics',
-			name: 'startDate',
-			type: 'string',
-			default: '2025-01-01 00:00:00, -30days',
-			description: 'The start date for earning statistics. Keep empty to get all earnings.',
-		},
-		{
-			displayName: 'The End Date for Earning Statistics',
-			name: 'endDate',
-			type: 'string',
-			default: '2025-01-01 00:00:00, +30days',
-			description: 'The end date for earning statistics. Keep empty to get all earnings.',
-		},
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when retrieving earning statistics',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Start Date',
+				name: 'startDate',
+				type: 'string',
+				default: '',
+				description: 'The start date for earning statistics. Keep empty to get all earnings.',
+			},
+			{
+				displayName: 'End Date',
+				name: 'endDate',
+				type: 'string',
+				default: '',
+				description: 'The end date for earning statistics. Keep empty to get all earnings.',
+			},
+		],
+	},
 ];
 
 export const getEarningStatisticsOperation = {

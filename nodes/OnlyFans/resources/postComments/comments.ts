@@ -1,43 +1,55 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listPostCommentsResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'The Post ID',
-			name: 'post_id',
-			type: 'string',
-			default: '',
-			required: true,
-			description: 'The post ID',
-		},
-		{
-			displayName: 'Number of Comments to Return (Default = 10)',
-			name: 'limit',
-			type: 'number',
-			description: 'Max number of results to return',
-			typeOptions: {
-				minValue: 1,
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'The Post ID',
+		name: 'post_id',
+		type: 'string',
+		default: '',
+		required: true,
+		description: 'The post ID',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when listing post comments',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				description: 'Max number of results to return',
+				typeOptions: {
+					minValue: 1,
+				},
+				default: 50,
 			},
-			default: 50,
-		},
-		{
-			displayName: 'Number of Comments to Skip for Pagination',
-			name: 'offset',
-			type: 'number',
-			default: 0,
-		},
-		{
-			displayName: 'Sort the Returned Comments (Default = Desc)',
-			name: 'sort',
-			type: 'string',
-			default: 'desc',
-		},
+			{
+				displayName: 'Offset',
+				name: 'offset',
+				type: 'number',
+				default: 0,
+				description: 'Number of comments to skip for pagination',
+			},
+			{
+				displayName: 'Sort',
+				name: 'sort',
+				type: 'string',
+				default: 'desc',
+				description: 'Sort the returned comments (default desc)',
+			},
+		],
+	},
 ];
 
 export const listPostCommentsOperation = {
