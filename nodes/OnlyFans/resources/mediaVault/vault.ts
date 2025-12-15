@@ -37,8 +37,7 @@ export const listVaultMediaResource: INodeProperties[] = [
 				displayName: 'List',
 				name: 'list',
 				type: 'number',
-				default: '0',
-				default: undefined as unknown as number,
+				default: '',
 				description: 'Only show media items from a specific list (category). Refer to Media Vault Lists endpoints.',
 			},
 			{
