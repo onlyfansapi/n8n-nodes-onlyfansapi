@@ -150,7 +150,6 @@ const resourceGroups: ResourceGroup[] = [
 		displayName: 'Connect OnlyFans Account',
 		description: 'Authenticate OnlyFans accounts and manage login attempts.',
 		operations: [
-			'startAuthentication',
 			'pollAuthenticationStatus',
 			'submit2FA',
 			'reAuthenticateAccount'
