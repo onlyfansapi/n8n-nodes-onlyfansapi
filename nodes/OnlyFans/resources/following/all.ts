@@ -1,48 +1,60 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listAllFollowingsResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'Number of Followings to Return (1-50)',
-			name: 'limit',
-			type: 'number',
-			typeOptions: {
-				minValue: 1,
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional filters when listing all followings',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Filter',
+				name: 'filter',
+				type: 'string',
+				default: '',
 			},
-			default: 50,
-			description: 'Max number of results to return',
-		},
-		{
-			displayName: 'Pagination Offset',
-			name: 'offset',
-			type: 'number',
-			default: 0,
-			description: 'Pagination offset. Must be at least 0.',
-		},
-		{
-			displayName: 'Filter',
-			name: 'filter',
-			type: 'string',
-			default: '',
-		},
-		{
-			displayName: 'Filter by Online Status (1 for Online, 0 for Offline, Null for All)',
-			name: 'filter.online',
-			type: 'number',
-			default: 1,
-		},
-		{
-			displayName: 'Filter by Paid Status (1 for Paid, 0 for Free, Null for All)',
-			name: 'filter.paid',
-			type: 'number',
-			default: 1,
-		},
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				typeOptions: {
+					minValue: 1,
+				},
+				default: 50,
+				description: 'Max number of results to return',
+			},
+			{
+				displayName: 'Offset',
+				name: 'offset',
+				type: 'number',
+				default: 0,
+				description: 'Pagination offset, must be at least 0',
+			},
+			{
+				displayName: 'Online Status',
+				name: 'filter.online',
+				type: 'number',
+				default: 1,
+				description: 'Filter by online status (1 for online, 0 for offline, null for all)',
+			},
+			{
+				displayName: 'Paid Status',
+				name: 'filter.paid',
+				type: 'number',
+				default: 1,
+				description: 'Filter by paid status (1 for paid, 0 for free, null for all)',
+			},
+		],
+	},
 ];
 
 export const listAllFollowingsOperation = {

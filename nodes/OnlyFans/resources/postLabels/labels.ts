@@ -1,25 +1,37 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listLabelsResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'Number of Labels to Return (Default = 10)',
-			name: 'limit',
-			type: 'string',
-			default: '10',
-		},
-		{
-			displayName: 'Number of Labels to Skip for Pagination',
-			name: 'offset',
-			type: 'string',
-			default: '',
-		},
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when listing post labels',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'string',
+				default: '10',
+				description: 'Number of labels to return (default 10)',
+			},
+			{
+				displayName: 'Offset',
+				name: 'offset',
+				type: 'string',
+				default: '',
+				description: 'Number of labels to skip for pagination',
+			},
+		],
+	},
 ];
 
 export const listLabelsOperation = {

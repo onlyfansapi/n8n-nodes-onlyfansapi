@@ -1,29 +1,40 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listUserListsResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'How Many Results to Return in the Request',
-			name: 'limit',
-			type: 'number',
-			typeOptions: {
-				minValue: 1,
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when listing user lists',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				typeOptions: {
+					minValue: 1,
+				},
+				default: 50,
+				description: 'Max number of results to return',
 			},
-			default: 50,
-			description: 'Max number of results to return',
-		},
-		{
-			displayName: 'Must Be at Least 0',
-			name: 'offset',
-			type: 'number',
-			default: 0,
-		},
+			{
+				displayName: 'Offset',
+				name: 'offset',
+				type: 'number',
+				default: 0,
+				description: 'Offset for pagination (must be at least 0)',
+			},
+		],
+	},
 ];
 
 export const listUserListsOperation = {

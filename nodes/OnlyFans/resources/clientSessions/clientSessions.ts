@@ -1,25 +1,37 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const createClientSessionResource: INodeProperties[] = [
-		{
-			displayName: 'Display Name of the Account Visible in Your OnlyFansAPI Console Dashboard',
-			name: 'display_name',
-			type: 'string',
-			default: 'STRLCxGLVC Agency / Model: Stella',
-			required: true,
-		},
-		{
-			displayName: 'Your Internal Reference ID for the Connected Account',
-			name: 'client_reference_id',
-			type: 'string',
-			default: 'my_crm_model_12345',
-		},
-		{
-			displayName: 'Proxy Country',
-			name: 'proxy_country',
-			type: 'string',
-			default: 'uk',
-		},
+	{
+		displayName: 'Display Name of the Account Visible in Your OnlyFansAPI Console Dashboard',
+		name: 'display_name',
+		type: 'string',
+		default: 'STRLCxGLVC Agency / Model: Stella',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when creating a client session',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Client Reference ID',
+				name: 'client_reference_id',
+				type: 'string',
+				default: '',
+				description: 'Your internal reference ID for the connected account',
+			},
+			{
+				displayName: 'Proxy Country',
+				name: 'proxy_country',
+				type: 'string',
+				default: '',
+				description: 'Proxy country to use for the client session',
+			},
+		],
+	},
 ];
 
 export const createClientSessionOperation = {

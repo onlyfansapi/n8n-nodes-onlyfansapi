@@ -1,48 +1,59 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listChatMediaGalleryResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'The Chat ID',
-			name: 'chat_id',
-			type: 'string',
-			default: '',
-			required: true,
-			description: 'The chat ID',
-		},
-		{
-			displayName: 'Filter by Specific Media Types',
-			name: 'type',
-			type: 'string',
-			default: 'claims',
-			description: 'Filter by specific media types. Keep empty to return all.',
-		},
-		{
-			displayName: 'Number of Medias to Return',
-			name: 'limit',
-			type: 'string',
-			default: '20',
-			description: 'Number of medias to return. Default = 20.',
-		},
-		{
-			displayName: 'Number of Medias to Skip for Pagination',
-			name: 'offset',
-			type: 'string',
-			default: '',
-		},
-		{
-			displayName: 'Whether to Skip User Details in Response (All or None)',
-			name: 'skip_users',
-			type: 'string',
-			default: 'all',
-			description: 'Whether to skip user details in response (all or none). Default = all.',
-		},
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'The Chat ID',
+		name: 'chat_id',
+		type: 'string',
+		default: '',
+		required: true,
+		description: 'The chat ID',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters to filter and paginate chat media',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'string',
+				default: 'claims',
+				description: 'Filter by specific media types. Keep empty to return all.',
+			},
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'string',
+				default: '20',
+				description: 'Number of medias to return. Default = 20.',
+			},
+			{
+				displayName: 'Offset',
+				name: 'offset',
+				type: 'string',
+				default: '',
+				description: 'Number of medias to skip for pagination',
+			},
+			{
+				displayName: 'Skip Users',
+				name: 'skip_users',
+				type: 'string',
+				default: 'all',
+				description: 'Whether to skip user details in response (all or none). Default = all.',
+			},
+		],
+	},
 ];
 
 export const listChatMediaGalleryOperation = {

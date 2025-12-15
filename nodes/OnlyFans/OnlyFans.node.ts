@@ -4,7 +4,6 @@ import {
 	type INodeTypeDescription,
 	type IExecuteFunctions,
 	type INodeExecutionData,
-	type IDataObject,
 	type INodeProperties,
 	NodeOperationError
 } from 'n8n-workflow';
@@ -95,9 +94,9 @@ export class OnlyFans implements INodeType {
 		return properties;
 	}
 
-	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
+async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 		const items = this.getInputData();
-		const returnData: IDataObject[] = [];
+		const returnData: INodeExecutionData[] = [];
 
 		for (let i = 0; i < items.length; i++) {
 			try {
@@ -115,16 +114,30 @@ export class OnlyFans implements INodeType {
 				}
 
 				const results = await executeResourceOperation.call(this, resource, operation, i);
-				returnData.push(...results);
+				for (const result of results) {
+					returnData.push({
+						json: result,
+						pairedItem: {
+							item: i,
+						},
+					});
+				}
 			} catch (error) {
 				if (this.continueOnFail()) {
-					returnData.push({ error: error.message });
+					returnData.push({
+						json: {
+							error: (error as Error).message,
+						},
+						pairedItem: {
+							item: i,
+						},
+					});
 				} else {
 					throw error;
 				}
 			}
 		}
 
-		return [this.helpers.returnJsonArray(returnData)];
+		return [returnData];
 	}
 }

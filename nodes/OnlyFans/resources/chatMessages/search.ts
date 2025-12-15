@@ -1,36 +1,29 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const searchChatMessagesResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'The Chat ID',
-			name: 'chat_id',
-			type: 'string',
-			default: '',
-			required: true,
-			description: 'The chat ID',
-		},
-		{
-			displayName: 'The Query Search in Messages',
-			name: 'query',
-			type: 'string',
-			default: 'Hello',
-			required: true,
-			description: 'The query search in messages',
-		},
-		{
-			displayName: 'Query',
-			name: 'query',
-			type: 'string',
-			default: 'suscipit',
-			required: true,
-		},
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'The Chat ID',
+		name: 'chat_id',
+		type: 'string',
+		default: '',
+		required: true,
+		description: 'The chat ID',
+	},
+	{
+		displayName: 'Query',
+		name: 'query',
+		type: 'string',
+		default: '',
+		required: true,
+		description: 'The query search in messages',
+	},
 ];
 
 export const searchChatMessagesOperation = {

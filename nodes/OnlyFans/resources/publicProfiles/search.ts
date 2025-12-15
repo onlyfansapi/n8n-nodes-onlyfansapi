@@ -1,92 +1,71 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const searchProfilesResource: INodeProperties[] = [
-		{
-			displayName: 'Query for Full Text Search in Username, Display Name, Bio',
-			name: 'query',
-			type: 'string',
-			default: 'milf',
-			required: true,
-		},
-		{
-			displayName: 'The Number of Profiles to Return',
-			name: 'limit',
-			type: 'string',
-			default: '10',
-			description: 'The number of profiles to return. For each returned profile we charge your account 1 credit. Default: `10`',
-		},
-		{
-			displayName: 'Minimum Subscribe Price',
-			name: 'min_subscribe_price',
-			type: 'string',
-			default: '',
-		},
-		{
-			displayName: 'Maximum Subscribe Price',
-			name: 'max_subscribe_price',
-			type: 'string',
-			default: '1000000',
-		},
-		{
-			displayName: 'Location',
-			name: 'location',
-			type: 'string',
-			default: 'New York',
-		},
-		{
-			displayName: 'Must Be at Least 3 Characters',
-			name: 'query',
-			type: 'string',
-			default: 'uqjqinuhdkglladpqjkfvriwptwvsrchqcaipeyyaafamwxidfyedfgsmkubjvgslfjh',
-		},
-		{
-			displayName: 'Must Be at Least 0',
-			name: 'min_subscribe_price',
-			type: 'number',
-			default: 81,
-			description: 'Must be at least 0.00',
-		},
-		{
-			displayName: 'Must Be at Least 0',
-			name: 'max_subscribe_price',
-			type: 'number',
-			default: 57,
-			description: 'Must be at least 0.00',
-		},
-		{
-			displayName: 'Location',
-			name: 'location',
-			type: 'string',
-			default: 'eveniet',
-		},
-		{
-			displayName: 'Website',
-			name: 'website',
-			type: 'string',
-			default: 'expedita',
-		},
-		{
-			displayName: 'Instagram',
-			name: 'instagram',
-			type: 'string',
-			default: 'reiciendis',
-		},
-		{
-			displayName: 'Tiktok',
-			name: 'tiktok',
-			type: 'string',
-			default: 'cum',
-		},
-		{
-			displayName: 'Must Be at Least 1',
-			name: 'limit',
-			type: 'number',
-			typeOptions: {
-				minValue: 1,
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional filters when searching public profiles',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Instagram',
+				name: 'instagram',
+				type: 'string',
+				default: '',
 			},
-			default: 50,
-			description: 'Max number of results to return',
-		},
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				typeOptions: {
+					minValue: 1,
+				},
+				default: 50,
+				description: 'Max number of results to return',
+			},
+			{
+				displayName: 'Location',
+				name: 'location',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Maximum Subscribe Price',
+				name: 'max_subscribe_price',
+				type: 'number',
+				default: 0,
+				description: 'Maximum subscribe price; must be at least 0.00',
+			},
+			{
+				displayName: 'Minimum Subscribe Price',
+				name: 'min_subscribe_price',
+				type: 'number',
+				default: 0,
+				description: 'Minimum subscribe price; must be at least 0.00',
+			},
+			{
+				displayName: 'Query',
+				name: 'query',
+				type: 'string',
+				default: '',
+				description: 'Full text search in username, display name, and bio (min 3 characters recommended)',
+			},
+			{
+				displayName: 'TikTok',
+				name: 'tiktok',
+				type: 'string',
+				default: '',
+			},
+			{
+				displayName: 'Website',
+				name: 'website',
+				type: 'string',
+				default: '',
+			},
+		],
+	},
 ];
 
 export const searchProfilesOperation = {

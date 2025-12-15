@@ -1,64 +1,75 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listVaultMediaResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'Optionally, Search for a Text Query',
-			name: 'query',
-			type: 'string',
-			default: 'Hi',
-		},
-		{
-			displayName: 'Sort the Results by a Field',
-			name: 'field',
-			type: 'string',
-			default: 'recent',
-			description: 'Sort the results by a field. Default `recent`.',
-		},
-		{
-			displayName: 'Filter the Results by a Media Type',
-			name: 'type',
-			type: 'string',
-			default: 'photo',
-			description: 'Filter the results by a media type. Keep empty to show all media.',
-		},
-		{
-			displayName: 'Only Show Media Items From a Specific List (Category)',
-			name: 'list',
-			type: 'number',
-			default: 123456789,
-			description: 'Only show media items from a specific list (category). **Refer to our Media Vault Lists endpoints.**.',
-		},
-		{
-			displayName: 'Sort the Results',
-			name: 'sort',
-			type: 'string',
-			default: 'desc',
-			description: 'Sort the results. Default `desc`.',
-		},
-		{
-			displayName: 'Number of Media to Return per Page',
-			name: 'limit',
-			type: 'number',
-			typeOptions: {
-				minValue: 1,
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters to filter and sort vault media',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Field',
+				name: 'field',
+				type: 'string',
+				default: 'recent',
+				description: 'Sort the results by a field. Default `recent`.',
 			},
-			default: 50,
-			description: 'Max number of results to return',
-		},
-		{
-			displayName: 'The Offset Used for Pagination',
-			name: 'offset',
-			type: 'number',
-			default: 0,
-			description: 'The offset used for pagination. Default `0`.',
-		},
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				typeOptions: {
+					minValue: 1,
+				},
+				default: 50,
+				description: 'Max number of results to return',
+			},
+			{
+				displayName: 'List',
+				name: 'list',
+				type: 'number',
+				default: '',
+				description: 'Only show media items from a specific list (category). Refer to Media Vault Lists endpoints.',
+			},
+			{
+				displayName: 'Media Type',
+				name: 'type',
+				type: 'string',
+				default: '',
+				description: 'Filter the results by a media type. Keep empty to show all media.',
+			},
+			{
+				displayName: 'Offset',
+				name: 'offset',
+				type: 'number',
+				default: 0,
+				description: 'The offset used for pagination. Default `0`.',
+			},
+			{
+				displayName: 'Query',
+				name: 'query',
+				type: 'string',
+				default: '',
+				description: 'Optionally, search for a text query',
+			},
+			{
+				displayName: 'Sort',
+				name: 'sort',
+				type: 'string',
+				default: 'desc',
+				description: 'Sort the results. Default `desc`.',
+			},
+		],
+	},
 ];
 
 export const listVaultMediaOperation = {

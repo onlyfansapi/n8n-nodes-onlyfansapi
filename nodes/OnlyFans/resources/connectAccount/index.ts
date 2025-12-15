@@ -1,15 +1,5 @@
 import type { EndpointResource } from '../index';
 
-import { startAuthenticationOperation } from './authenticate';
-
-export const authenticateResource: EndpointResource = {
-	name: 'authenticate',
-	displayName: 'Authenticate',
-	description: 'Start the authentication process for a new account. Our systems will bypass Captcha and also ask you for 2FA code if required. All credentials are stored securely using bcrypt and only used during login.',
-	endpoint: '/authenticate',
-	operations: [startAuthenticationOperation],
-};
-
 import { pollAuthenticationStatusOperation, submit2FAOperation  } from './attemptId';
 
 export const attemptIdResource: EndpointResource = {
@@ -31,7 +21,6 @@ export const reauthenticateResource: EndpointResource = {
 };
 
 export const connectAccountResources: EndpointResource[] = [
-	authenticateResource,
 	attemptIdResource,
 	reauthenticateResource
 ];

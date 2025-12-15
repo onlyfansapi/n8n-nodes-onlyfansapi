@@ -1,53 +1,61 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listFreeTrialLinksResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'The Number of Trial Links to Return',
-			name: 'limit',
-			type: 'number',
-			typeOptions: {
-				minValue: 1,
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional filters when listing free trial links',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Field',
+				name: 'field',
+				type: 'string',
+				default: 'create_date',
+				description: 'Sort the results by a field. Default `create_date`.',
 			},
-			default: 50,
-			required: true,
-			description: 'Max number of results to return',
-		},
-		{
-			displayName: 'The Offset Used for Pagination',
-			name: 'offset',
-			type: 'number',
-			default: 0,
-			required: true,
-			description: 'The offset used for pagination. Default `0`.',
-		},
-		{
-			displayName: 'Sort the Results',
-			name: 'sort',
-			type: 'string',
-			default: 'desc',
-			description: 'Sort the results. Default `desc`.',
-		},
-		{
-			displayName: 'Sort the Results by a Field',
-			name: 'field',
-			type: 'string',
-			default: 'create_date',
-			description: 'Sort the results by a field. Default `create_date`.',
-		},
-		{
-			displayName: 'Wait for the Revenue Data to Finish Processing, Instead of Processing in the Background',
-			name: 'synchronous',
-			type: 'boolean',
-			default: false,
-			description: 'Whether to wait for the revenue data to finish processing, instead of processing in the background. **Will result in longer response times, use with caution**. Default `false`',
-		},
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				typeOptions: {
+					minValue: 1,
+				},
+				default: 50,
+				description: 'Max number of results to return',
+			},
+			{
+				displayName: 'Offset',
+				name: 'offset',
+				type: 'number',
+				default: 0,
+				description: 'The offset used for pagination. Default `0`.',
+			},
+			{
+				displayName: 'Sort',
+				name: 'sort',
+				type: 'string',
+				default: 'desc',
+				description: 'Sort the results. Default `desc`.',
+			},
+			{
+				displayName: 'Synchronous',
+				name: 'synchronous',
+				type: 'boolean',
+				default: false,
+				description: 'Whether to wait for revenue data to finish processing instead of background processing',
+			},
+		],
+	},
 ];
 
 export const listFreeTrialLinksOperation = {

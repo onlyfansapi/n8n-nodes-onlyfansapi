@@ -1,34 +1,44 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const statisticsOverviewResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'The Start Date for the Statistics',
-			name: 'start_date',
-			type: 'string',
-			default: '2025-01-01 00:00:00',
-			description: 'The start date for the statistics. Keep empty to retrieve from the model\'s start date.',
-		},
-		{
-			displayName: 'The End Date for the Statistics',
-			name: 'end_date',
-			type: 'string',
-			default: '2025-03-31 23:59:59',
-			description: 'The end date for the statistics. Keep empty to retrieve until now.',
-		},
-		{
-			displayName: 'The Type of Statistics to Retrieve (Default = Empty)',
-			name: 'type',
-			type: 'string',
-			default: 'fans',
-			description: 'The type of statistics to retrieve (default = empty)',
-		},
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when retrieving statistics overview',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Start Date',
+				name: 'start_date',
+				type: 'string',
+				default: '',
+				description: 'The start date for the statistics. Keep empty to retrieve from the model\'s start date.',
+			},
+			{
+				displayName: 'End Date',
+				name: 'end_date',
+				type: 'string',
+				default: '',
+				description: 'The end date for the statistics. Keep empty to retrieve until now.',
+			},
+			{
+				displayName: 'Type',
+				name: 'type',
+				type: 'string',
+				default: '',
+				description: 'The type of statistics to retrieve (e.g. fans)',
+			},
+		],
+	},
 ];
 
 export const statisticsOverviewOperation = {

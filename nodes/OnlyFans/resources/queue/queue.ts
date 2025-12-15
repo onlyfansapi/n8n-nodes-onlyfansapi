@@ -1,46 +1,54 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const listQueueItemsResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'Earliest Publish Date to Return (Must Be at Least Today)',
-			name: 'publishDateStart',
-			type: 'string',
-			default: '2025-01-01',
-			required: true,
-		},
-		{
-			displayName: 'Latest Publish Date to Return',
-			name: 'publishDateEnd',
-			type: 'string',
-			default: '2025-01-01',
-			required: true,
-		},
-		{
-			displayName: 'Time Timezone of the Provided Dates',
-			name: 'timezone',
-			type: 'string',
-			default: 'Europe/Prague',
-			required: true,
-			description: 'Time timezone of the provided dates. [View available timezone values](https://www.php.net/manual/en/timezones.php).',
-		},
-		{
-			displayName: 'Maximum Number of Queue Items to Return (Default = 20)',
-			name: 'limit',
-			type: 'number',
-			description: 'Max number of results to return',
-			typeOptions: {
-				minValue: 1,
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when listing queue items',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Publish Date Start',
+				name: 'publishDateStart',
+				type: 'string',
+				default: '',
+				description: 'Earliest publish date to return (must be at least today)',
 			},
-			default: 50,
-			required: true,
-		},
+			{
+				displayName: 'Publish Date End',
+				name: 'publishDateEnd',
+				type: 'string',
+				default: '',
+				description: 'Latest publish date to return',
+			},
+			{
+				displayName: 'Timezone',
+				name: 'timezone',
+				type: 'string',
+				default: '',
+				description: 'Timezone of the provided dates (see PHP timezone list)',
+			},
+			{
+				displayName: 'Limit',
+				name: 'limit',
+				type: 'number',
+				description: 'Max number of results to return',
+				typeOptions: {
+					minValue: 1,
+				},
+				default: 50,
+			},
+		],
+	},
 ];
 
 export const listQueueItemsOperation = {

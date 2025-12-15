@@ -1,27 +1,38 @@
 import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const archivePostResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'The Post ID',
-			name: 'post_id',
-			type: 'string',
-			default: '',
-			required: true,
-			description: 'The post ID',
-		},
-		{
-			displayName: 'Set to `True` to Move This Post to the Private Archive',
-			name: 'private_archive',
-			type: 'boolean',
-			default: true,
-		},
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'The Post ID',
+		name: 'post_id',
+		type: 'string',
+		default: '',
+		required: true,
+		description: 'The post ID',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when archiving a post',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Private Archive',
+				name: 'private_archive',
+				type: 'boolean',
+				default: true,
+				description: 'Whether to move this post to the private archive',
+			},
+		],
+	},
 ];
 
 export const archivePostOperation = {

@@ -33,35 +33,46 @@ export const getUserListOperation = {
 };
 
 export const updateUserListResource: INodeProperties[] = [
-		{
-			displayName: 'Account ID',
-			name: 'account',
-			type: 'string',
-			default: '',
-			required: true,
-		},
-		{
-			displayName: 'The userListId',
-			name: 'userListId',
-			type: 'string',
-			default: '',
-			required: true,
-			description: 'The userListId',
-		},
-		{
-			displayName: 'The New Name for the User List',
-			name: 'name',
-			type: 'string',
-			default: 'My Updated List Name',
-			required: true,
-			description: 'The new name for the User List',
-		},
-		{
-			displayName: 'Whether to Pin the User List to Feed to the OnlyFans Homepage or Not',
-			name: 'isPinnedToFeed',
-			type: 'boolean',
-			default: true,
-		},
+	{
+		displayName: 'Account ID',
+		name: 'account',
+		type: 'string',
+		default: '',
+		required: true,
+	},
+	{
+		displayName: 'The userListId',
+		name: 'userListId',
+		type: 'string',
+		default: '',
+		required: true,
+		description: 'The userListId',
+	},
+	{
+		displayName: 'The New Name for the User List',
+		name: 'name',
+		type: 'string',
+		default: 'My Updated List Name',
+		required: true,
+		description: 'The new name for the User List',
+	},
+	{
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		default: {},
+		description: 'Optional parameters when updating a user list',
+		placeholder: 'Add Field',
+		options: [
+			{
+				displayName: 'Pinned to Feed',
+				name: 'isPinnedToFeed',
+				type: 'boolean',
+				default: true,
+				description: 'Whether to pin the user list to feed on the OnlyFans homepage or not',
+			},
+		],
+	},
 ];
 
 export const updateUserListOperation = {
