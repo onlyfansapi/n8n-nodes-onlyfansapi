@@ -11,7 +11,7 @@ export class OnlyFansApi implements ICredentialType {
 
 	displayName = 'OnlyFans API';
 
-	icon: Icon = { light: 'file:../../icons/onlyfansapi.svg', dark: 'file:../../icons/onlyfansapi.svg' };
+	icon: Icon = { light: 'file:../icons/onlyfansapi.svg', dark: 'file:../icons/onlyfansapi.svg' };
 
 	documentationUrl = 'https://docs.onlyfansapi.com/integrations/n8n';
 
