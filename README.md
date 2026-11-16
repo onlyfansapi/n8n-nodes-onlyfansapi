@@ -1,9 +1,9 @@
-# n8n-nodes-onlyfansapi
+# Fans API for n8n
 ![Example workflow](/images/example.png)
 
-This is an n8n community node. It lets you use OnlyFans API in your n8n workflows.
+This is an n8n community node. It lets you use Fans API in your n8n workflows.
 
-OnlyFans API is an unofficial API for OnlyFans, a popular content subscription service, to automate your workflows with ease.
+Fans API is an unofficial API for OnlyFans, a popular content subscription service, to automate your workflows with ease.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
@@ -99,7 +99,7 @@ This node supports the following resources and operations:
 - **Update Mass Message** - Update a mass message
 
 ### Media
-- **Scrape Media From The OnlyFans CDN** - Scrapes a https://cdn*.onlyfans.com/* URL and uploads it to the OnlyFans API CDN (max file size: 500MB)
+- **Scrape Media From The OnlyFans CDN** - Scrapes a https://cdn*.onlyfans.com/* URL and uploads it to the Fans API CDN (max file size: 500MB)
 
 ### Media Vault
 - **Delete Vault Media** - Delete one or multiple media from your vault
@@ -218,9 +218,9 @@ This node supports the following resources and operations:
 
 ## Credentials
 
-To make use of the OnlyFans API node, you must have an OnlyFans API account. Follow these simple steps:
-1. Sign up for an account at [OnlyFans API](https://app.onlyfansapi.com)
-2. Go to the OnlyFans API console -> API Keys
+To make use of the Fans API node, you must have a Fans API account. Follow these simple steps:
+1. Sign up for an account at [Fans API](https://app.fansapi.com)
+2. Go to the Fans API console -> API Keys
     ![API Keys navigation item](/images/api-keys/api-keys-nav-item.png)
 3. Create a new API key
     ![Create API Key button](/images/api-keys/create-api-key-button.png)
@@ -228,9 +228,12 @@ To make use of the OnlyFans API node, you must have an OnlyFans API account. Fol
     ![API Key creation form](/images/api-keys/api-key-creation-form.png)
 5. Copy the API key to your clipboard
     ![Save API Key](/images/api-keys/save-api-key.png)
-6. In n8n, create a new credential for the OnlyFans API node, and paste the API key into the "API Key" field.
+6. In n8n, create a new credential for the Fans API node, and paste the API key into the "API Key" field.
 
 ## Compatibility
+
+The npm package remains `@onlyfansapi/n8n-nodes-onlyfansapi`. The internal node and credential identifiers remain unchanged so existing workflows and saved credentials continue to work with Fans API.
+
 Tested with n8n version 1.115.0 and above. Earlier versions may work but are not officially supported.
 
 ## Usage
@@ -238,27 +241,27 @@ Tested with n8n version 1.115.0 and above. Earlier versions may work but are not
 
 If you're new to n8n, check out the [Try it out](https://docs.n8n.io/try-it-out/) documentation to help you get started with the basics of building workflows.
 
-### Understanding OnlyFans API
+### Understanding Fans API
 
-Before using this node, we recommend familiarizing yourself with the [OnlyFans API documentation](https://docs.onlyfansapi.com/introduction) to understand:
+Before using this node, we recommend familiarizing yourself with the [Fans API documentation](https://docs.fansapi.com/introduction) to understand:
 
-- What OnlyFans API is and what it offers
+- What Fans API is and what it offers
 - The available features and capabilities
 - How to work with OnlyFans accounts
 - Best practices for API usage
 
-The OnlyFans API platform provides a comprehensive REST API that allows you to interact with OnlyFans without needing to build your own proxy management system or reverse engineer the API. With this n8n node, you can easily integrate these capabilities into your automated workflows.
+The Fans API platform provides a comprehensive REST API that allows you to interact with OnlyFans without needing to build your own proxy management system or reverse engineer the API. With this n8n node, you can easily integrate these capabilities into your automated workflows.
 
 ## Resources
 
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
-* [OnlyFans API introduction](https://docs.onlyfansapi.com/introduction)
-* [Connecting an OnlyFans account](https://docs.onlyfansapi.com/introduction/guides/connect-onlyfans-account)
-* [OnlyFans API credit structure](https://docs.onlyfansapi.com/introduction/essentials/credits)
-* [API reference](https://docs.onlyfansapi.com/api-reference)
-* [Webhooks](https://docs.onlyfansapi.com/webhooks)
-* [FAQ](https://docs.onlyfansapi.com/faq)
+* [Fans API introduction](https://docs.fansapi.com/introduction)
+* [Connecting an OnlyFans account](https://docs.fansapi.com/introduction/guides/connect-onlyfans-account)
+* [Fans API credit structure](https://docs.fansapi.com/introduction/essentials/credits)
+* [API reference](https://docs.fansapi.com/api-reference)
+* [Webhooks](https://docs.fansapi.com/webhooks)
+* [FAQ](https://docs.fansapi.com/faq)
 
 ## Version history
 ### 0.1
-- Initial release with support for all OnlyFans API resources and operations.
+- Initial release with support for all Fans API resources and operations.

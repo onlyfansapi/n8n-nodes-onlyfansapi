@@ -2,7 +2,7 @@ import type { INodeProperties, IDataObject } from 'n8n-workflow';
 
 export const createClientSessionResource: INodeProperties[] = [
 	{
-		displayName: 'Display Name of the Account Visible in Your OnlyFansAPI Console Dashboard',
+		displayName: 'Display Name of the Account Visible in Your Fans API Console Dashboard',
 		name: 'display_name',
 		type: 'string',
 		default: 'STRLCxGLVC Agency / Model: Stella',

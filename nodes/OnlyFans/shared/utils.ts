@@ -76,7 +76,7 @@ export async function executeResourceOperation(
 	// Make the API request
 	const requestOptions: IHttpRequestOptions = {
 		method,
-		url: `https://app.onlyfansapi.com/api${url}`,
+		url: `https://app.fansapi.com/api${url}`,
 		json: true,
 	};
 

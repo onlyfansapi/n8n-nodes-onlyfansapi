@@ -9,11 +9,11 @@ import type {
 export class OnlyFansApi implements ICredentialType {
 	name = 'onlyFansApi';
 
-	displayName = 'OnlyFans API';
+	displayName = 'Fans API';
 
-	icon: Icon = { light: 'file:../icons/onlyfansapi.svg', dark: 'file:../icons/onlyfansapi.svg' };
+	icon: Icon = { light: 'file:../icons/fansapi.svg', dark: 'file:../icons/fansapi.svg' };
 
-	documentationUrl = 'https://docs.onlyfansapi.com/integrations/n8n';
+	documentationUrl = 'https://docs.fansapi.com/integrations/n8n';
 
 	properties: INodeProperties[] = [
 		{
@@ -37,7 +37,7 @@ export class OnlyFansApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://app.onlyfansapi.com/api',
+			baseURL: 'https://app.fansapi.com/api',
 			url: '/whoami',
 			method: 'GET',
 		},
