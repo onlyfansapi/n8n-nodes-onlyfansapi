@@ -1,4 +1,4 @@
-# Fans API for n8n
+# n8n-nodes-onlyfansapi
 ![Example workflow](/images/example.png)
 
 This is an n8n community node. It lets you use Fans API in your n8n workflows.
