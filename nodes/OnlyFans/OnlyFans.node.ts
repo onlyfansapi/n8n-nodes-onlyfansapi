@@ -12,15 +12,15 @@ import { executeResourceOperation } from './shared/utils';
 
 export class OnlyFans implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'OnlyFans API',
+		displayName: 'Fans API',
 		name: 'onlyFans',
-		icon: { light: 'file:../../icons/onlyfansapi.svg', dark: 'file:../../icons/onlyfansapi.svg' },
+		icon: { light: 'file:../../icons/fansapi.svg', dark: 'file:../../icons/fansapi.svg' },
 		group: ['input'],
 		version: 1,
 		subtitle: '={{$parameter["resource"]}}: {{$parameter["operation"]}}',
-		description: 'Consume the OnlyFans API',
+		description: 'Consume the Fans API',
 		defaults: {
-			name: 'Onlyfans API',
+			name: 'Fans API',
 		},
 		usableAsTool: true,
 		inputs: [NodeConnectionTypes.Main],
@@ -32,7 +32,7 @@ export class OnlyFans implements INodeType {
 			},
 		],
 		requestDefaults: {
-			baseURL: 'https://app.onlyfansapi.com/api',
+			baseURL: 'https://app.fansapi.com/api',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',

@@ -15,7 +15,7 @@ import { scrapeMediaFromTheOnlyFansCDNOperation } from './scrape';
 export const scrapeResource: EndpointResource = {
 	name: 'scrape',
 	displayName: 'Scrape',
-	description: 'Scrapes a `https://cdn*.onlyfans.com/*` URL *or* Vault Media ID, and uploads it to the OnlyFans API CDN, where you can view or download the file. **Max file size is 500MB**',
+	description: 'Scrapes a `https://cdn*.onlyfans.com/*` URL *or* Vault Media ID, and uploads it to the Fans API CDN, where you can view or download the file. **Max file size is 500MB**',
 	endpoint: '/{account}/media/scrape',
 	operations: [scrapeMediaFromTheOnlyFansCDNOperation],
 };

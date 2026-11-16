@@ -1,9 +1,9 @@
 {
 	"name": "OnlyFans",
 	"version": 1,
-	"description": "Consume the OnlyFans API - get accounts or account info",
+	"description": "Consume the Fans API - get accounts or account info",
 	"defaults": {
-		"name": "OnlyFans"
+		"name": "Fans API"
 	},
 	"inputs": ["main"],
 	"outputs": ["main"],

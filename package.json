@@ -1,15 +1,15 @@
 {
   "name": "@onlyfansapi/n8n-nodes-onlyfansapi",
   "version": "1.1.1",
-  "description": "n8n community node to work with OnlyFans API",
+  "description": "n8n community node to work with Fans API",
   "license": "MIT",
-  "homepage": "https://onlyfansapi.com",
+  "homepage": "https://fansapi.com",
   "keywords": [
     "n8n-community-node-package"
   ],
   "author": {
-    "name": "OnlyFans API Team",
-    "email": "tech@onlyfansapi.com"
+    "name": "Fans API Team",
+    "email": "tech@fansapi.com"
   },
   "repository": {
     "type": "git",
